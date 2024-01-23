@@ -4,5 +4,9 @@ from soothestore.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', homepage),
+    path('', HomePage),
+    path('FindProduct/', SearchPage),
+    path('Buy/<int:product_id>/', Buy),
+    path('FAQ/', FAQ),
+    path('Cart/', Cart),
 ]

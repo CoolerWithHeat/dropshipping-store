@@ -1,0 +1,55 @@
+@keyframes Shake { 
+    0% { 
+        transform: rotate(7deg); 
+    } 
+
+    25% { 
+        transform: rotate(-3deg); 
+    } 
+
+    50% { 
+        transform: rotate(5deg); 
+    } 
+
+    75% { 
+        transform: rotate(-6deg); 
+    } 
+
+    100% { 
+        transform: rotate(5deg); 
+    } 
+}
+
+@keyframes GetBigAndDown {
+    0%, 100% {
+    transform: scale(1);
+    }
+    50% {
+    transform: scale(1.5);
+    }
+}
+
+.animateCart{
+    animation: Shake 0.4s linear 2.5 alternate, GetBigAndDown 0.5s; 
+}
+
+@media (max-width:767px){
+    .CartBoundary{
+        display: none;
+    }
+}
+
+@media (min-width:767px){
+    .CartBoundaryMobile{
+        display: none;
+    }
+}
+
+@media (max-width:767px){
+    .CartBoundaryMobile{
+        position: fixed;
+        right: 10%;
+        top: 12%;
+        z-index: 999999999999;
+    }
+}

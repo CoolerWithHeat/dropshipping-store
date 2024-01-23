@@ -1,76 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
-
-@keyframes anim-lineUp {
-  0% {
-    opacity: 0;
-    transform: translateY(80%);
-  }
-  20% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
-
-#BrandText{
-  animation: 3.2s anim-lineUp ease-out;
-}
-
-.service_section {
-  position: relative;
-  background-color: #f8f8f8;
-}
-
-.service_section .heading_container h2 {
-  text-transform: none;
-}
-
-.service_section .box {
-  margin: 45px 0;
-  text-align: center;
-}
-
-.service_section .box .img-box {
-  height: 65px;
-}
-
-.service_section .box .img-box img {
-  height: 100%;
-  -webkit-filter: brightness(0);
-          filter: brightness(0);
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.service_section .box .detail-box {
-  margin-top: 15px;
-}
-
-.service_section .box .detail-box h5 {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.service_section .box .detail-box a {
-  color: #19c880;
-  font-weight: 600;
-}
-
-.service_section .box .detail-box a:hover {
-  color: #8019c8;
-}
-
-.service_section .box:hover .img-box img {
-  -webkit-filter: brightness(1);
-          filter: brightness(1);
-  cursor: pointer;
-}
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
@@ -354,9 +283,14 @@ header
   color: #2a2a2a;
 }
 
-.header-area .main-nav .nav li:hover a,
-.header-area .main-nav .nav li a.active {
+a.active{
   color: #aaa!important;
+  opacity: 1;
+}
+
+.header-area .main-nav .nav li:hover a,
+.header-area .main-nav .nav li {
+  color: #ff9c62!important;
 }
 
 .background-header .main-nav .nav li:hover a,
@@ -2097,7 +2031,7 @@ About Us Page
 .our-team .team-item .thumb .hover-effect .inner-content ul li a {
   width: 44px;
   height: 44px;
-  background-color: #fff;
+  background-color: #f34e4e;
   color: #2a2a2a;
   display: inline-block;
   text-align: center;
@@ -2334,9 +2268,6 @@ responsive
 }
 
 
-
-
-
 #preloader {
   overflow: hidden;
   background-color: #2a2a2a;
@@ -2414,4 +2345,104 @@ responsive
   100% {
     opacity: 0;
   }
+}
+
+
+.brandLogo{
+  --a: 1deg;
+  aspect-ratio: 5;
+  border-radius: 10px;
+  transform: perspective(400px) rotate3d(var(--r,1,-1),0,calc(var(--i,1)*var(--a)));
+  -webkit-mask: 
+    linear-gradient(135deg,#000c 40%,#000,#000c 60%)
+    100% 100%/250% 250%;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.brandLogo:hover{
+  --i: -20; 
+  -webkit-mask-position: 0 0;
+}
+
+.active{
+  --i: -20; 
+  -webkit-mask-position: 0 0;
+}
+
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+#BrandText{
+  animation: 2s anim-lineUp ease-out;
+}
+
+.onpage{
+  color: #888; /* Set the color to a grey shade */
+  opacity: 0.6; /* Adjust the opacity to make it appear faded */
+}
+
+.service_section {
+  position: relative;
+  background-color: #f8f8f8;
+}
+
+.service_section .heading_container h2 {
+  text-transform: none;
+}
+
+.service_section .box {
+  margin: 45px 0;
+  text-align: center;
+}
+
+.service_section .box .img-box {
+  height: 65px;
+}
+
+.service_section .box .img-box img {
+  height: 100%;
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.service_section .box .detail-box {
+  margin-top: 15px;
+}
+
+.service_section .box .detail-box h5 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.service_section .box .detail-box a {
+  color: #19c880;
+  font-weight: 600;
+}
+
+.service_section .box .detail-box a:hover {
+  color: #8019c8;
+}
+
+.service_section .box:hover .img-box img {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  cursor: pointer;
 }

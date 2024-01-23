@@ -194,6 +194,7 @@
 }
 .fa-heart:before {
   content: "\f004";
+  display: none;
 }
 .fa-star:before {
   content: "\f005";
@@ -535,9 +536,21 @@
 .fa-retweet:before {
   content: "\f079";
 }
-.fa-shopping-cart:before {
-  content: "\f07a";
+@media (max-width:460px){
+  .fa-shopping-cart:before {
+    content: "\f07a";
+    font-size: 20px;
+    cursor:pointer;
+  }
 }
+@media (min-width:460px){
+  .fa-shopping-cart:before {
+    content: "\f07a";
+    font-size: 24px;
+    cursor:pointer;
+  }
+}
+
 .fa-folder:before {
   content: "\f07b";
 }

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'images/Brand.png' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css" integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ratings.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/comments.css' %}">      
+    <link rel="stylesheet" type="text/css" href="{% static 'css/CartAnimation.css' %}">                                                        
+    <link rel="stylesheet" href="{% static 'css/templatemo-hexashop.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+    
+    <body>
+
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+
+                        <a href="\../" class="logo">
+                            <img id="LogoPoint" class="brandLogo" src="{% static 'images/companyLogo.png' %}">   
+                        </a>
+
+                        <ul class="nav">
+                            <li class="scroll-to-section">
+                                <div class="CartBoundary" style="cursor: pointer;">
+                                    <a href="./Cart">
+                                        <i class="fa" style="font-size:25px">&#xf07a;</i>
+                                        <span id="lblCartCount" class='badge badge-warning'> 0 </span>
+                                    </a>
+                                </div>                  
+                            </li>
+                            <li class="scroll-to-section"><a href="#top">Home</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">Pages</a>
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="products.html">Products</a></li>
+                                    <li><a href="single-product.html">Single Product</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+
+                                
+                                <a href="javascript:;">Brands</a>
+                                <ul>
+                                    <li><a href="#">Kahuna</a></li>
+                                    <li><a href="#">Osaki</a></li> 
+                                    <li><a href="#">Real Relax</a></li>
+                                    <li><a href="#">Homedics</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section onpage"><a href="#explore">Explore</a></li>
+                            <li class="scroll-to-section"><a href="/productsPage">Products</a></li>
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        
+                    </nav>
+
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    <br><br><br><br><br>
+    <body>
+        <div class="CartBoundaryMobile MobileCart" style="cursor: pointer;">
+            <a href="\../Cart">
+                <i class="fa" style="font-size:24px">&#xf07a;</i>
+                <span class='badge badge-warning' id='lblCartCount_mobile'> 0 </span>
+            </a>
+        </div>
+        <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="mySlides">
+            <img src="https://www.kahunachair.com/wp-content/uploads/2014/12/6800_brown.jpg">
+            </div>
+    
+            <div class="mySlides">
+            <img src="https://www.kahunachair.com/wp-content/uploads/2018/10/kappa_brown.jpg">
+            </div>
+    
+            <div class="mySlides">
+            <img src="https://images.thdstatic.com/productImages/2f1b7bff-3f5f-4a39-9a78-c5e9cf109cbd/svn/black-white-kahuna-massage-chairs-lm-6800tbw-31_600.jpg">
+            </div>
+    
+            <div class="mySlides">
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51349w5OhAL._AC_UF1000,1000_QL80_.jpg">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+            <div class="thumbnails cursor">
+                <img src="https://www.kahunachair.com/wp-content/uploads/2014/12/6800_brown.jpg" alt="" class="active" onclick="openModal();currentSlide(1)">
+                <img src="https://www.kahunachair.com/wp-content/uploads/2018/10/kappa_brown.jpg" alt="" onclick="openModal();currentSlide(2)">
+                <img src="https://images.thdstatic.com/productImages/2f1b7bff-3f5f-4a39-9a78-c5e9cf109cbd/svn/black-white-kahuna-massage-chairs-lm-6800tbw-31_600.jpg" alt="" onclick="openModal();currentSlide(3)">
+                <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51349w5OhAL._AC_UF1000,1000_QL80_.jpg" alt="" onclick="openModal();currentSlide(4)">
+            </div>
+        </div>
+    
+        <div class="cart">
+            <div class="CartBoundaryFixed MobileCart" style="cursor: pointer;">
+                <a href="../../Cart">
+                    <i class="fa" style="font-size:24px;">&#xf07a;</i>
+                    <span id="lblCartCountMobile" class='badge badge-warning'> 0 </span>
+                </a>
+            </div>
+        </div>
+        <main>
+        <div class="imgs-col">
+            <div class="main-img">
+            <a class="prev2" onclick="plusSlides2(-1)">&#10094;</a>
+            <div class="mySlides2">
+                <img src="https://www.kahunachair.com/wp-content/uploads/2014/12/6800_brown.jpg">
+            </div>
+    
+            <div class="mySlides2">
+                <img src="https://www.kahunachair.com/wp-content/uploads/2018/10/kappa_brown.jpg">
+            </div>
+    
+            <div class="mySlides2">
+                <img src="https://images.thdstatic.com/productImages/2f1b7bff-3f5f-4a39-9a78-c5e9cf109cbd/svn/black-white-kahuna-massage-chairs-lm-6800tbw-31_600.jpg">
+            </div>
+    
+            <div class="mySlides2">
+                <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51349w5OhAL._AC_UF1000,1000_QL80_.jpg">
+            </div>
+    
+            <a class="next2" onclick="plusSlides2(1)">&#10095;</a></div>
+    
+            <div class="thumbnails cursor">
+                <img src="https://www.kahunachair.com/wp-content/uploads/2014/12/6800_brown.jpg" alt="" class="active" onclick="openModal();currentSlide(1)">
+                <img src="https://www.kahunachair.com/wp-content/uploads/2018/10/kappa_brown.jpg" alt="" onclick="openModal();currentSlide(2)">
+                <img src="https://images.thdstatic.com/productImages/2f1b7bff-3f5f-4a39-9a78-c5e9cf109cbd/svn/black-white-kahuna-massage-chairs-lm-6800tbw-31_600.jpg" alt="" onclick="openModal();currentSlide(3)">
+                <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51349w5OhAL._AC_UF1000,1000_QL80_.jpg" alt="" onclick="openModal();currentSlide(4)">
+            </div>
+            
+        </div>
+    
+        <div class="text-col">
+            <span id="highlight">Osaki Brand</span>
+            <h1 id="name">Osaki 4000XT B</h1>
+            <p >
+                Experience ultimate relaxation with our high-tech massage chair featuring air massage and body scan technology. Elevate your comfort today!
+            </p>
+            <span id="price">
+            <h2>$<span data-price="3999.99" id="amount">3999.99</span></h2>
+            <small id="deducted" data-amount="250">-$250</small>
+            </span>
+            <span id="old-price">$4249</span>
+                <div id="Quantity" class="options">
+                    <button id="quantityButton"><img src="{% static 'images/BuyPage/icon-minus.svg' %}" alt="" onclick="minus()"></button>
+                    <button class='ProductQuantity' style="width: 5px;" id="result">1</button>
+                    <button id="quantityButton" onclick="plus()"><img src="{% static 'images/BuyPage/icon-plus.svg' %}" alt=""></button>
+                    <button data-id='1' id="addToCart" onclick="AddToCart(event);"><img src="{% static 'images/BuyPage/icon-cart.svg' %}" alt=""> Add to Cart</button>
+                </div>
+            </div>
+    
+        </main>
+        <br><br><br><br>
+        <div class="ratingsSign">
+            <span class="heading">User Rating</span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+            <p>4.1 average based on 254 reviews.</p>
+        </div>
+        <div class="ratings">
+            <div class="firstReviewSection">
+                <h1 style="text-align: center;" class="display-3">4.7</h1>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                
+                <div>
+                    <br>
+                    <h1 style="text-align: center; font-size: 15px;" class="display-6">3 Reviews</h1>
+                </div>
+            </div>
+            <div class="secondReviewSection">
+                <div class="row">
+                <div class="side">
+                    <div>5 <span class="fa fa-star rating_specific"></span></div>
+                    </div>
+                    <div style="--progress: 62%;" class="middle">
+                        <div class="bar-container">
+                            <div class="bar-5"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>150</div>
+                    </div>
+                <div class="side">
+                    <div>4 <span class="fa fa-star rating_specific"></span></div>
+                </div>
+                <div class="middle">
+                    <div style="--progress: 33%;" class="bar-container animate_charts">
+                    <div class="bar-4"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>63</div>
+                </div>
+                <div class="side">
+                    <div>3 <span class="fa fa-star rating_specific"></span></div>
+                </div>
+                <div class="middle">
+                    <div style="--progress: 3%;" class="bar-container">
+                    <div class="bar-3"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>15</div>
+                </div>
+                <div class="side">
+                    <div>2 <span class="fa fa-star rating_specific"></span></div>
+                </div>
+                <div class="middle">
+                    <div style="--progress: 0%;" class="bar-container">
+                    <div class="bar-2"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>6</div>
+                </div>
+                <div class="side">
+                    <div> 1 <span class="fa fa-star rating_specific indented"> </span></div>
+                </div>
+                <div class="middle">
+                    <div style="--progress: 0%;" class="bar-container">
+                    <div class="bar-1"></div>
+                    </div>
+                </div>
+                <div class="side right">
+                    <div>20</div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <hr style="border:3px solid #f1f1f1">
+        
+    <div class="container">
+            <div class="tab-pane fade active show" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
+                <div class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
+                    <a href="#" class="btn btn-outline-primary btn-sm float-right">Top Rated</a>
+                    <h5 class="mb-1">All Ratings and Reviews</h5>
+                    <div class="reviews-members pt-4 pb-4">
+                        <div class="media">
+                            <div class="media-body">
+                                <div class="reviews-members-header">
+                                    <span class="star-rating float-right">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </span>
+                                    <h6 class="mb-1"><a class="text-black" href="#">Brandon</a></h6>
+                                    <h6 style="font-size: 11px;" class="mb-1"><a class="text-black" href="#">Fort Worth, Texas</a></h6>
+                                    <p class="text-gray">Tue, 20 Mar 2020</p>
+                                </div>
+                                <div class="reviews-members-body">
+                                    <p>The chair's design is both modern and comfortable. I've noticed a significant reduction in tension and discomfort in my back since incorporating regular sessions with the chair. it comes with a bunch of massage options. Looks reliable and premium even though much cheaper than other massage chairs, recommend it !</p>
+                                </div>
+                                <div class="reviews-members-footer">
+                                    <a class="total-like" href="#"><i class="icofont-thumbs-up"></i> 856M</a> <a class="total-like" href="#"><i class="icofont-thumbs-down"></i> 158K</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="reviews-members pt-4 pb-4">
+                        <div class="media">
+                            <div class="media-body">
+                                <div class="reviews-members-header">
+                                    <span class="star-rating float-right">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </span>
+                                    <h6 class="mb-1"><a class="text-black" href="#">Josef</a></h6>
+                                    <h6 style="font-size: 11px;" class="mb-1"><a class="text-black" href="#">Fort Worth, Texas</a></h6>
+                                    <p class="text-gray">Tue, 20 Mar 2020</p>
+                                </div>
+                                <div class="reviews-members-body">
+                                    <p>The build quality is robust, user-friendly controls and many customizable options to figure out the best massage options. so far looks good, i think it would be the best investment for someone like me who wants some chilling after a daunting day </p>
+                                </div>
+                                <div class="reviews-members-footer">
+                                    <a class="total-like" href="#"><i class="icofont-thumbs-up"></i> 88K</a> <a class="total-like" href="#"><i class="icofont-thumbs-down"></i> 1K</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews-members pt-4 pb-4">
+                        <div class="media">
+                            <div class="media-body">
+                                <div class="reviews-members-header">
+                                    <span class="star-rating float-right">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </span>
+                                    <h6 class="mb-1"><a class="text-black" href="#">Zack D. </a></h6>
+                                    <h6 style="font-size: 11px;" class="mb-1"><a class="text-black" href="#">Fort Worth, Texas</a></h6>
+                                    <p class="text-gray">Tue, 20 Mar 2020</p>
+                                </div>
+                                <div class="reviews-members-body">
+                                    <p>placed an order to California, The shipping was fast overall good.</p>
+                                </div>
+                                <div class="reviews-members-footer">
+                                    <a class="total-like" href="#"><i class="icofont-thumbs-up"></i> 88K</a> <a class="total-like" href="#"><i class="icofont-thumbs-down"></i> 1K</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <a class="text-center w-100 d-block mt-4 font-weight-bold" href="#">See All Reviews</a>
+                </div>
+                <div class="bg-white rounded shadow-sm p-4 mb-5 rating-review-select-page">
+                    <h5 class="mb-4">Leave Comment</h5>
+                    <p class="mb-2">Rate our Chair</p>
+                    <div style="cursor: pointer; width: 135px;" class="mb-4">
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input style="width: 175px;" class="form-control"></input>
+                            <label>Your Comment</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-sm" type="button"> Submit Comment </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    </body>
+    
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
+    <script src="{% static 'js/owl-carousel.js' %}"></script>
+    <script src="{% static 'js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+            $("."+selectedClass).fadeIn();
+            $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+        var logoElement = document.getElementById('LogoPoint');
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                logoElement.classList.add('active');
+            }, 999);
+            setTimeout(() => {
+                logoElement.classList.remove('active');
+            }, 1699);
+        });
+
+        function GetProductQuantity(){
+
+        }
+
+        function AnimateLogo(){
+            logoElement.classList.add('active');
+            setTimeout(() => {
+                logoElement.classList.remove('active');
+            }, 1000);
+        }
+
+        function ManageCart(product_id, quantity = 1) {
+            const savedProducts = JSON.parse(localStorage.getItem('MassageCart')) || [];
+            let isRemoved = false;
+        
+            const index = savedProducts.findIndex(product => product.product_id === product_id);
+        
+            if (index === -1) {
+                savedProducts.push({ product_id, quantity });
+            } else {
+                savedProducts.splice(index, 1);
+                isRemoved = true;
+            }
+        
+            localStorage.setItem('MassageCart', JSON.stringify(savedProducts));
+        
+            return [savedProducts.length, isRemoved];
+        }
+
+        function AddToCart(data=null){
+            const product_id = data.target.dataset.id ? Number(data.target.dataset.id) : null;
+            const quantity = document.getElementsByClassName('ProductQuantity')[0]
+            const result = ManageCart(product_id, Number(quantity.textContent));
+            const total_products = result[0];
+            const current_color = result[1] ? 'rgb(127,255,212)' : '#343a40';
+            const element = data.target;
+            const Datapath = document.getElementById('lblCartCount')
+            const DatapathMobile = document.getElementById('lblCartCount_mobile')
+            DatapathMobile.textContent = 3;
+            const Divpath = document.getElementsByClassName('CartBoundary')[0];
+            const DivpathMobile = document.getElementsByClassName('MobileCart')[0];
+            Divpath.classList.add('animateCart');
+            DivpathMobile.classList.add('animateCart');
+            Datapath.textContent = total_products;
+            DatapathMobile.textContent = total_products;
+            if (result[1]){
+                element.classList.add('rollback');
+                element.classList.remove('CartSelected');
+            }
+            else{
+                element.classList.remove('rollback');
+                element.classList.add('CartSelected');
+            }
+            setTimeout(() => {
+                element.style.color = current_color;
+            }, 333);
+            setTimeout(() => {
+                Divpath.classList.remove('animateCart');
+                DivpathMobile.classList.remove('animateCart');
+            }, 999);
+        }
+
+        function UpdateProductStatus(){
+            const PricePoint = document.getElementById('amount')
+            const CartButton = document.getElementById('addToCart')
+            const DeductionIndicator = document.getElementById('deducted')
+            const product_id = Number(CartButton.dataset.id)
+            const savedProducts = JSON.parse(localStorage.getItem('MassageCart')) || [];
+            const index = savedProducts.findIndex(product => product.product_id === product_id);
+        
+            if (index === -1) {
+                console.log('Not Added')
+            } else {
+                console.log('Already Added')
+            }
+
+        }
+
+        function SetProductCard(){
+            const Cart = JSON.parse(localStorage.getItem('MassageCart')) || [];
+            const total_products = Cart.length;
+            const Datapath = window.innerWidth > 767 ? document.getElementById('lblCartCount') : document.getElementById('lblCartCount_mobile');
+            Datapath.textContent = total_products;
+            Cart.forEach(Each=>{
+                const element = document.querySelector(`[data-id="${Each.product_id}"]`);
+                element.style.color = 'rgb(127,255,212)';
+            })
+        }
+        
+        SetProductCard()
+        UpdateProductStatus()
+
+    </script>
+
+</body>
+</html>
