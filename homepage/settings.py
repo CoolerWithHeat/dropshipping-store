@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'soothestore',
+    'algoliasearch_django',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -100,9 +102,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AWS_ACCESS_KEY_ID = 'AKIA6GBME65QL46UYKU4'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'massage-char-bucket'
+AWS_S3_REGION_NAME = 'us-east-1'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -111,6 +116,11 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+ALGOLIA = {
+    'APPLICATION_ID': 'K7LWE7RYA4',
+    'API_KEY': 'dd84d643cb097b484b87bf0a2c35d742'
+}
 
 
 # Static files (CSS, JavaScript, Images)

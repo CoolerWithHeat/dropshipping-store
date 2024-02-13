@@ -2,7 +2,6 @@
 {% load static %}
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -14,11 +13,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/ratings.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/comments.css' %}">      
-    <link rel="stylesheet" type="text/css" href="{% static 'css/CartAnimation.css' %}">                                                        
+    <link rel="stylesheet" type="text/css" href="{% static 'css/CartAnimation.css' %}">         
+    <link rel="stylesheet" type="text/css" href="{% static 'css/BuyCart.css' %}">                                                   
     <link rel="stylesheet" href="{% static 'css/templatemo-hexashop.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.4.55/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custombuttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/warnings.css' %}">
 </head>
-    
     <body>
 
     <div id="preloader">
@@ -58,9 +62,7 @@
                                     <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
                             </li>
-                            <li class="submenu">
-
-                                
+                            <li class="submenu">                                
                                 <a href="javascript:;">Brands</a>
                                 <ul>
                                     <li><a href="#">Kahuna</a></li>
@@ -85,7 +87,7 @@
     </header>
     <br><br><br><br><br>
     <body>
-        <div class="CartBoundaryMobile MobileCart" style="cursor: pointer;">
+        <div style="z-index: 9;"  class="CartBoundaryMobile MobileCart" style="cursor: pointer;">
             <a href="\../Cart">
                 <i class="fa" style="font-size:24px">&#xf07a;</i>
                 <span class='badge badge-warning' id='lblCartCount_mobile'> 0 </span>
@@ -129,39 +131,70 @@
             </div>
         </div>
         <main>
-        <div class="imgs-col">
-            <div class="main-img">
-            <a class="prev2" onclick="plusSlides2(-1)">&#10094;</a>
-            <div class="mySlides2">
-                <img src="https://www.kahunachair.com/wp-content/uploads/2014/12/6800_brown.jpg">
-            </div>
-    
-            <div class="mySlides2">
-                <img src="https://www.kahunachair.com/wp-content/uploads/2018/10/kappa_brown.jpg">
-            </div>
-    
-            <div class="mySlides2">
-                <img src="https://images.thdstatic.com/productImages/2f1b7bff-3f5f-4a39-9a78-c5e9cf109cbd/svn/black-white-kahuna-massage-chairs-lm-6800tbw-31_600.jpg">
-            </div>
-    
-            <div class="mySlides2">
-                <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51349w5OhAL._AC_UF1000,1000_QL80_.jpg">
-            </div>
-    
-            <a class="next2" onclick="plusSlides2(1)">&#10095;</a></div>
-    
-            <div class="thumbnails cursor">
-                <img src="https://www.kahunachair.com/wp-content/uploads/2014/12/6800_brown.jpg" alt="" class="active" onclick="openModal();currentSlide(1)">
-                <img src="https://www.kahunachair.com/wp-content/uploads/2018/10/kappa_brown.jpg" alt="" onclick="openModal();currentSlide(2)">
-                <img src="https://images.thdstatic.com/productImages/2f1b7bff-3f5f-4a39-9a78-c5e9cf109cbd/svn/black-white-kahuna-massage-chairs-lm-6800tbw-31_600.jpg" alt="" onclick="openModal();currentSlide(3)">
-                <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51349w5OhAL._AC_UF1000,1000_QL80_.jpg" alt="" onclick="openModal();currentSlide(4)">
-            </div>
+        <div class="MobileProductView">
+            <div class="slider-container" id="new-products">
+                <div class="slides-wrapper">
+                    <div class="slides-container">
+                    <ul class="slider-list">
+                        <li class="slider-item">
+                            <a href="#">
+                                <img src="https://www.kahunachair.com/wp-content/uploads/2014/12/6800_brown.jpg" alt="New Product 1" />
+                            </a>
+                        </li>
+                        <li class="slider-item">
+                            <a href="#">
+                                <img src="https://www.kahunachair.com/wp-content/uploads/2018/10/kappa_brown.jpg" alt="New Product 2" />
+                            </a>
+                        </li>
+                        <li class="slider-item">
+                            <a href="#">
+                                <img src="https://images.thdstatic.com/productImages/2f1b7bff-3f5f-4a39-9a78-c5e9cf109cbd/svn/black-white-kahuna-massage-chairs-lm-6800tbw-31_600.jpg" alt="New Product 3" />
+                            </a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="slider-arrows">
+                    <button type="button" class="slider-arrow-prev">&#10094;</button>
+                    <button type="button" class="slider-arrow-next">&#10095;</button>
+                </div>
+                </div>
+        </div>
+        <div class="DesktopProductView">
+            <div class="imgs-col">
+                <div class="main-img">
+                <a class="prev2" onclick="plusSlides2(-1)">&#10094;</a>
+                    <div class="mySlides2">
+                        <img src="https://www.kahunachair.com/wp-content/uploads/2014/12/6800_brown.jpg">
+                    </div>
             
+                    <div class="mySlides2">
+                        <img src="https://www.kahunachair.com/wp-content/uploads/2018/10/kappa_brown.jpg">
+                    </div>
+            
+                    <div class="mySlides2">
+                        <img src="https://images.thdstatic.com/productImages/2f1b7bff-3f5f-4a39-9a78-c5e9cf109cbd/svn/black-white-kahuna-massage-chairs-lm-6800tbw-31_600.jpg">
+                    </div>
+            
+                    <div class="mySlides2">
+                        <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51349w5OhAL._AC_UF1000,1000_QL80_.jpg">
+                    </div>
+            
+                    <a class="next2" onclick="plusSlides2(1)">&#10095;</a></div>
+            
+                    <div class="thumbnails cursor">
+                        <img src="https://www.kahunachair.com/wp-content/uploads/2014/12/6800_brown.jpg" alt="" class="active" onclick="openModal();currentSlide(1)">
+                        <img src="https://www.kahunachair.com/wp-content/uploads/2018/10/kappa_brown.jpg" alt="" onclick="openModal();currentSlide(2)">
+                        <img src="https://images.thdstatic.com/productImages/2f1b7bff-3f5f-4a39-9a78-c5e9cf109cbd/svn/black-white-kahuna-massage-chairs-lm-6800tbw-31_600.jpg" alt="" onclick="openModal();currentSlide(3)">
+                        <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51349w5OhAL._AC_UF1000,1000_QL80_.jpg" alt="" onclick="openModal();currentSlide(4)">
+                    </div>
+            </div>
         </div>
     
         <div class="text-col">
             <span id="highlight">Osaki Brand</span>
-            <h1 id="name">Osaki 4000XT B</h1>
+            <h1 id="name">OSAKI OS-PRO ADMIRAL II MASSAGE CHAIR - FREE MASSAGE CHAIR CLEANER AND EXTENDED WARRANTY
+            </h1>
             <p >
                 Experience ultimate relaxation with our high-tech massage chair featuring air massage and body scan technology. Elevate your comfort today!
             </p>
@@ -174,150 +207,101 @@
                     <button id="quantityButton"><img src="{% static 'images/BuyPage/icon-minus.svg' %}" alt="" onclick="minus()"></button>
                     <button class='ProductQuantity' style="width: 5px;" id="result">1</button>
                     <button id="quantityButton" onclick="plus()"><img src="{% static 'images/BuyPage/icon-plus.svg' %}" alt=""></button>
-                    <button data-id='1' id="addToCart" onclick="AddToCart(event);"><img src="{% static 'images/BuyPage/icon-cart.svg' %}" alt=""> Add to Cart</button>
+                    <div id="UserCardBase" class="buttons" data-id="1" onclick="AddToCart(event);"> <button class="cart-button"> <h6 id="CartButtonState" class="defaultCartState">Add to Cart</h6> <i class="fa fa-shopping-cart"></i> <i class="fa fa-square"></i> </button> </div>
                 </div>
             </div>
     
         </main>
         <br><br><br><br>
-        <div class="ratingsSign">
-            <span class="heading">User Rating</span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star "></span>
-            <p>4.1 average based on 254 reviews.</p>
-        </div>
-        <div class="ratings">
-            <div class="firstReviewSection">
-                <h1 style="text-align: center;" class="display-3">4.7</h1>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                
-                <div>
-                    <br>
-                    <h1 style="text-align: center; font-size: 15px;" class="display-6">3 Reviews</h1>
-                </div>
+        <div id="RatingsClosure">
+            <div class="ratingsSign">
+                <span class="heading">User Rating</span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star "></span>
+                <p>4.1 average based on 254 reviews.</p>
             </div>
-            <div class="secondReviewSection">
-                <div class="row">
-                <div class="side">
-                    <div>5 <span class="fa fa-star rating_specific"></span></div>
+            <div class="ratings">
+                <div class="firstReviewSection">
+                    <h1 style="text-align: center;" class="display-3">4.7</h1>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <div>
+                        <br>
+                        <h1 style="text-align: center; font-size: 15px;" class="display-6">3 Reviews</h1>
                     </div>
-                    <div style="--progress: 62%;" class="middle">
-                        <div class="bar-container">
-                            <div class="bar-5"></div>
+                </div>
+                <div class="secondReviewSection">
+                    <div class="row">
+                    <div class="side">
+                        <div>5 <span class="fa fa-star rating_specific"></span></div>
+                        </div>
+                        <div style="--progress: 62%;" class="middle">
+                            <div class="bar-container">
+                                <div class="bar-5"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>150</div>
+                        </div>
+                    <div class="side">
+                        <div>4 <span class="fa fa-star rating_specific"></span></div>
+                    </div>
+                    <div class="middle">
+                        <div style="--progress: 33%;" class="bar-container animate_charts">
+                        <div class="bar-4"></div>
                         </div>
                     </div>
                     <div class="side right">
-                        <div>150</div>
+                        <div>63</div>
                     </div>
-                <div class="side">
-                    <div>4 <span class="fa fa-star rating_specific"></span></div>
-                </div>
-                <div class="middle">
-                    <div style="--progress: 33%;" class="bar-container animate_charts">
-                    <div class="bar-4"></div>
+                    <div class="side">
+                        <div>3 <span class="fa fa-star rating_specific"></span></div>
                     </div>
-                </div>
-                <div class="side right">
-                    <div>63</div>
-                </div>
-                <div class="side">
-                    <div>3 <span class="fa fa-star rating_specific"></span></div>
-                </div>
-                <div class="middle">
-                    <div style="--progress: 3%;" class="bar-container">
-                    <div class="bar-3"></div>
+                    <div class="middle">
+                        <div style="--progress: 3%;" class="bar-container">
+                        <div class="bar-3"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="side right">
-                    <div>15</div>
-                </div>
-                <div class="side">
-                    <div>2 <span class="fa fa-star rating_specific"></span></div>
-                </div>
-                <div class="middle">
-                    <div style="--progress: 0%;" class="bar-container">
-                    <div class="bar-2"></div>
+                    <div class="side right">
+                        <div>15</div>
                     </div>
-                </div>
-                <div class="side right">
-                    <div>6</div>
-                </div>
-                <div class="side">
-                    <div> 1 <span class="fa fa-star rating_specific indented"> </span></div>
-                </div>
-                <div class="middle">
-                    <div style="--progress: 0%;" class="bar-container">
-                    <div class="bar-1"></div>
+                    <div class="side">
+                        <div>2 <span class="fa fa-star rating_specific"></span></div>
                     </div>
-                </div>
-                <div class="side right">
-                    <div>20</div>
-                </div>
+                    <div class="middle">
+                        <div style="--progress: 0%;" class="bar-container">
+                        <div class="bar-2"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>6</div>
+                    </div>
+                    <div class="side">
+                        <div> 1 <span class="fa fa-star rating_specific indented"> </span></div>
+                    </div>
+                    <div class="middle">
+                        <div style="--progress: 0%;" class="bar-container">
+                        <div class="bar-1"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div>20</div>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
         <hr style="border:3px solid #f1f1f1">
-        
     <div class="container">
             <div class="tab-pane fade active show" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
-                <div class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
+                <div id="ReviewsWindow" class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
                     <a href="#" class="btn btn-outline-primary btn-sm float-right">Top Rated</a>
                     <h5 class="mb-1">All Ratings and Reviews</h5>
-                    <div class="reviews-members pt-4 pb-4">
-                        <div class="media">
-                            <div class="media-body">
-                                <div class="reviews-members-header">
-                                    <span class="star-rating float-right">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </span>
-                                    <h6 class="mb-1"><a class="text-black" href="#">Brandon</a></h6>
-                                    <h6 style="font-size: 11px;" class="mb-1"><a class="text-black" href="#">Fort Worth, Texas</a></h6>
-                                    <p class="text-gray">Tue, 20 Mar 2020</p>
-                                </div>
-                                <div class="reviews-members-body">
-                                    <p>The chair's design is both modern and comfortable. I've noticed a significant reduction in tension and discomfort in my back since incorporating regular sessions with the chair. it comes with a bunch of massage options. Looks reliable and premium even though much cheaper than other massage chairs, recommend it !</p>
-                                </div>
-                                <div class="reviews-members-footer">
-                                    <a class="total-like" href="#"><i class="icofont-thumbs-up"></i> 856M</a> <a class="total-like" href="#"><i class="icofont-thumbs-down"></i> 158K</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="reviews-members pt-4 pb-4">
-                        <div class="media">
-                            <div class="media-body">
-                                <div class="reviews-members-header">
-                                    <span class="star-rating float-right">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </span>
-                                    <h6 class="mb-1"><a class="text-black" href="#">Josef</a></h6>
-                                    <h6 style="font-size: 11px;" class="mb-1"><a class="text-black" href="#">Fort Worth, Texas</a></h6>
-                                    <p class="text-gray">Tue, 20 Mar 2020</p>
-                                </div>
-                                <div class="reviews-members-body">
-                                    <p>The build quality is robust, user-friendly controls and many customizable options to figure out the best massage options. so far looks good, i think it would be the best investment for someone like me who wants some chilling after a daunting day </p>
-                                </div>
-                                <div class="reviews-members-footer">
-                                    <a class="total-like" href="#"><i class="icofont-thumbs-up"></i> 88K</a> <a class="total-like" href="#"><i class="icofont-thumbs-down"></i> 1K</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="reviews-members pt-4 pb-4">
                         <div class="media">
                             <div class="media-body">
@@ -343,30 +327,55 @@
                         </div>
                     </div>
                     <hr>
-                    <a class="text-center w-100 d-block mt-4 font-weight-bold" href="#">See All Reviews</a>
-                </div>
-                <div class="bg-white rounded shadow-sm p-4 mb-5 rating-review-select-page">
-                    <h5 class="mb-4">Leave Comment</h5>
-                    <p class="mb-2">Rate our Chair</p>
-                    <div style="cursor: pointer; width: 135px;" class="mb-4">
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                    <form>
-                        <div class="form-group">
-                            <label>Your Name</label>
-                            <input style="width: 175px;" class="form-control"></input>
-                            <label>Your Comment</label>
-                            <textarea class="form-control"></textarea>
+                </div>  
+            </div>
+            <div id="commentsbutton">
+                <button id="EnablerButton" onclick="enableComments(event);" class="button-23" role="button">Leave a comment</button>
+                <div id="loader" class="loaderdisabled"></div>
+            </div>
+            <br>
+            <div style="display: none; margin: auto;" id="errorMessage">
+                <div style="margin: auto;" id="errorCard" class="alert alert-warning">
+                        <div class="icon__wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                            </svg>
+                            <i class="fa-light fa-triangle-exclamation"></i>
                         </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary btn-sm" type="button"> Submit Comment </button>
+                        <p style="min-width: 80%;" id="errorMessageText">Please Fill Out All Fields</a></p>
+                        <div onclick="CloseAlert();" style="float: right; right: 0;">
+                            <svg style="right: 0;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                            </svg>
                         </div>
-                    </form>
                 </div>
+            </div>
+            <br>
+            <div id="commentsBoundary" class='invisibleField'>
+                <div id="SavingStatusBoundary"></div>  
+                <div id="commentsContent">
+                        <h5 class="mb-4">Leave Comment</h5>
+                        <p class="mb-2">Rate Our Chair</p>
+                            <div style="cursor: pointer; width: 135px;" class="mb-4">
+                                <span data-endpoint="0" onclick="SelectRate(event);" data-rate='1' class="fa fa-star"></span>
+                                <span data-endpoint="0" onclick="SelectRate(event);" data-rate='2' class="fa fa-star"></span>
+                                <span data-endpoint="0" onclick="SelectRate(event);" data-rate='3' class="fa fa-star"></span>
+                                <span data-endpoint="0" onclick="SelectRate(event);" data-rate='4' class="fa fa-star"></span>
+                                <span data-endpoint="0" onclick="SelectRate(event);" data-rate='5' class="fa fa-star"></span>
+                            </div>
+                        <form>
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input id="Namefield" style="width: 175px;" class="form-control"></input>
+                                <label>Your Comment</label>
+                                <textarea id="UserTextfield" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button onclick="SubmitReview();" class="button-23" type="button"> Submit Comment </button>
+                            </div>
+                        </form>  
+                </div>
+                <br>
             </div>
         </div>
     </div>
@@ -381,6 +390,7 @@
     <script src="{% static 'js/scrollreveal.min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/slider.js' %}"></script>
 
     <script>
 
@@ -436,8 +446,54 @@
             return [savedProducts.length, isRemoved];
         }
 
+        const fadeAwayText = (div, fadeout=true)=>{
+            if (fadeout && div){
+                    div.classList.remove('defaultCartState')
+                    div.classList.add('dissappearText')
+            }else{
+                if (fadeout && div)
+                    div.classList.remove('dissappearText')
+                    div.classList.add('defaultCartState')
+            }
+        }
+
+        const ResetCommentFields = ()=>{
+            const window = document.getElementById('commentsBoundary');
+            const DefaultStructure = `
+                <div id="SavingStatusBoundary"></div>  
+                <div id="commentsContent">
+                        <h5 class="mb-4">Leave Comment</h5>
+                        <p class="mb-2">Rate Our Chair</p>
+                            <div style="cursor: pointer; width: 135px;" class="mb-4">
+                                <span data-endpoint="0" onclick="SelectRate(event);" data-rate='1' class="fa fa-star"></span>
+                                <span data-endpoint="0" onclick="SelectRate(event);" data-rate='2' class="fa fa-star"></span>
+                                <span data-endpoint="0" onclick="SelectRate(event);" data-rate='3' class="fa fa-star"></span>
+                                <span data-endpoint="0" onclick="SelectRate(event);" data-rate='4' class="fa fa-star"></span>
+                                <span data-endpoint="0" onclick="SelectRate(event);" data-rate='5' class="fa fa-star"></span>
+                            </div>
+                        <form>
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input id="Namefield" style="width: 175px;" class="form-control"></input>
+                                <label>Your Comment</label>
+                                <textarea id="UserTextfield" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button onclick="SubmitReview();" class="button-23" type="button"> Submit Comment </button>
+                            </div>
+                        </form>  
+                </div>
+            `;
+            if (window)
+                window.innerHTML = DefaultStructure;
+        }
+
         function AddToCart(data=null){
-            const product_id = data.target.dataset.id ? Number(data.target.dataset.id) : null;
+            const ProductIdBase = document.getElementsByClassName('buttons')[0];
+            const savedProducts = JSON.parse(localStorage.getItem('MassageCart')) || [];
+            const targetButton = document.getElementsByClassName('cart-button')[0];
+            const CartHeader = document.getElementById('CartButtonState');
+            const product_id = ProductIdBase.dataset.id ? Number(ProductIdBase.dataset.id) : null;
             const quantity = document.getElementsByClassName('ProductQuantity')[0]
             const result = ManageCart(product_id, Number(quantity.textContent));
             const total_products = result[0];
@@ -452,37 +508,40 @@
             DivpathMobile.classList.add('animateCart');
             Datapath.textContent = total_products;
             DatapathMobile.textContent = total_products;
+            fadeAwayText(CartHeader);
             if (result[1]){
-                element.classList.add('rollback');
-                element.classList.remove('CartSelected');
+                targetButton.classList.add('removed');
             }
             else{
-                element.classList.remove('rollback');
-                element.classList.add('CartSelected');
+                targetButton.classList.add('clicked');
             }
-            setTimeout(() => {
-                element.style.color = current_color;
-            }, 333);
             setTimeout(() => {
                 Divpath.classList.remove('animateCart');
                 DivpathMobile.classList.remove('animateCart');
             }, 999);
+            setTimeout(() => {
+                targetButton.classList.remove('removed');
+                targetButton.classList.remove('clicked');
+                if (result[1]){
+                    CartHeader.textContent = 'Item Removed';
+                }else{
+                    CartHeader.textContent = 'Item Added';
+                }
+                fadeAwayText(CartHeader, false);
+            }, 1999);
         }
 
         function UpdateProductStatus(){
-            const PricePoint = document.getElementById('amount')
-            const CartButton = document.getElementById('addToCart')
-            const DeductionIndicator = document.getElementById('deducted')
-            const product_id = Number(CartButton.dataset.id)
+            const PricePoint = document.getElementById('amount');
+            const CartButton = document.getElementById('UserCardBase');
+            const CartHeader = document.getElementById('CartButtonState');
+            const DeductionIndicator = document.getElementById('deducted');
+            const product_id = Number(CartButton.dataset.id);
             const savedProducts = JSON.parse(localStorage.getItem('MassageCart')) || [];
             const index = savedProducts.findIndex(product => product.product_id === product_id);
-        
-            if (index === -1) {
-                console.log('Not Added')
-            } else {
-                console.log('Already Added')
+            if (!(index === -1)){
+                CartHeader.innerText = 'Item Added';
             }
-
         }
 
         function SetProductCard(){
@@ -495,9 +554,396 @@
                 element.style.color = 'rgb(127,255,212)';
             })
         }
+
+        const SelectRate = (propertyBase)=>{
+            const currenRate = propertyBase.target.dataset.rate;
+            const maxRate = currenRate ? Number(currenRate) : null ;
+            if(maxRate){
+                for (let id=1; id<=5; id++){
+                    const starElement = document.querySelector(`[data-rate="${id}"]`);
+                    if (id <= maxRate){
+                        starElement.classList.add('checked');
+                        if (id==maxRate){
+                            starElement.setAttribute('data-endpoint', '1');
+                        }else{
+                            starElement.setAttribute('data-endpoint', '0');
+                        }
+                    }
+                    else
+                        starElement.classList.remove('checked');
+                }
+            }
+        }
+
+        const GetRate = ()=>{
+            const search = document.querySelectorAll('[data-endpoint="1"]');
+            const rateTag = search.length > 0 ? search[search.length - 1] : null;
+            const FinalRate = rateTag ? rateTag.dataset.rate : null;
+            return FinalRate ? FinalRate : 0;
+        }
         
-        SetProductCard()
-        UpdateProductStatus()
+        const GetName = ()=>{
+            const field = document.getElementById('Namefield');
+            if (field)
+                if (field.value)
+                    return field.value
+            return false
+        }   
+
+        const GetText = ()=>{
+            const field = document.getElementById('UserTextfield');  
+            if (field)
+                if (field.value)
+                    return field.value
+            return false 
+        }
+
+
+        function SubmitReview(){
+            const wholeWindow = document.getElementById('commentsBoundary');
+            const statusWindow = document.getElementById('SavingStatusBoundary');
+            const commentsField = document.getElementById('commentsContent');
+            const Button = document.getElementById('EnablerButton');
+            const errorField = document.getElementById('errorMessage');
+            const product_rate = GetRate();
+            const name = GetName();
+            const text = GetText();
+            if (product_rate && name && text){
+                const expectedForm = {rate: product_rate, sender_name:name, text:text};
+                statusWindow.style.display = 'block'; 
+                commentsField.style.display = 'none';
+                EnableLoading();
+                CloseAlert();
+                setTimeout(() => {
+                    EnableLoading(false);
+                    LetKnowSuccess();
+                }, 999);
+                setTimeout(() => {
+                    wholeWindow.className = 'invisibleField';
+                    Button.style.display = 'block';
+                    ResetCommentFields();
+                }, 2999);
+            }else{
+                errorField.style.removeProperty('display');
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        behavior: 'smooth',
+                    });
+                }, 333);
+            }
+        }
+
+        const enableComments = (event)=>{
+            const commentsField = document.getElementById('commentsBoundary');
+            const loader = document.getElementById('loader')
+            if (event)
+                event.target.style.display='none';
+                if (loader){
+                    loader.classList.add('loader')
+                    setTimeout(() => {
+                        commentsField.classList.remove('invisibleField');
+                        commentsField.classList.add('visibleField');
+                        window.scrollTo({
+                            top: document.body.scrollHeight,
+                            behavior: 'smooth',
+                        });
+                    }, 777);
+                    setTimeout(() => {
+                        loader.classList.remove('loader');
+                    }, 999);
+                }
+            else    
+                commentsField.classList.remove('invisibleField');
+                commentsField.classList.add('visibleField');
+        };
+
+        const CloseAlert = ()=>{
+            const errorField = document.getElementById('errorMessage');
+            errorField.classList.add('popDissappear')
+            setTimeout(() => {
+                errorField.style.display = 'none';
+            }, 666);
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth',
+            });
+        };
+
+        const LetKnowSuccess = ()=>{
+            const alertWindow = document.getElementById('SavingStatusBoundary');
+            if (alertWindow)
+                alertWindow.innerHTML += `
+                    <main class="cd__main">
+                        <div class="main-container">
+                        <div class="check-container">
+                            <div class="check-background">
+                                <svg viewBox="0 0 65 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 25L27.3077 44L58.5 7" stroke="white" stroke-width="13" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="check-shadow"></div>
+                        </div>
+                        <h1 class='display-5'>Thank You!</h1>
+                        </div>
+                    </main>
+                `;
+        };
+
+        const EnableLoading = (enable=true)=>{
+            const alertWindow = document.getElementById('SavingStatusBoundary');
+            const loader = document.getElementById('status-loader')
+            if (enable)
+                alertWindow.innerHTML += '<div id="status-loader" class="loader"></div>';
+            else
+                if (loader)
+                    loader.remove();
+        };
+
+
+        const getRation = (reviews) => {
+            var five = 0;
+            var four = 0;
+            var three = 0;
+            var two = 0;
+            var one = 0;
+            if (Array.isArray(reviews))
+                reviews.forEach(each=>{
+                    if (each.rate == 5)
+                        five += 1;
+                    if (each.rate == 4)
+                        four += 1;
+                    if (each.rate == 3)
+                        three += 1;
+                    if (each.rate == 2)
+                        two += 1;
+                    if (each.rate == 1)
+                        one += 1;
+                })
+            return {five, four, three, two, one};
+        };
+
+        const getPercentRation = (reviews) => {
+            var five = 0;
+            var four = 0;
+            var three = 0;
+            var two = 0;
+            var one = 0;
+            if (Array.isArray(reviews))
+                reviews.forEach(each=>{
+                    if (each.rate == 5)
+                        five += 1;
+                    if (each.rate == 4)
+                        four += 1;
+                    if (each.rate == 3)
+                        three += 1;
+                    if (each.rate == 2)
+                        two += 1;
+                    if (each.rate == 1)
+                        one += 1;
+                })
+            return {five, four, three, two, one};
+        };
+
+        const generateOverviewStar = (half=false) => {
+            var starElement = document.createElement('span');
+            if (half){
+                starElement.classList.add('fa', 'fa-star-half', 'checked');
+                return starElement.outerHTML;
+            }
+            else{
+                starElement.classList.add('fa', 'fa-star', 'checked');
+                return starElement.outerHTML;
+            }
+        };
+        const generateStar = (lit_up = true, forGeneral=false) => {
+            var starElement = document.createElement('span');
+            if (forGeneral){
+                starElement.classList.add('fa', 'fa-star-half', 'checked');
+                return starElement.outerHTML;
+            }else{
+                starElement.classList.add('fa', 'fa-star');
+                if (!lit_up) {
+                    starElement.classList.add('checked');
+                }
+                return starElement.outerHTML;
+            }
+        };
+
+        const makeGeneralStar = (max_rate) => {
+            var stringStars = ``;
+            const needHalf = max_rate % 1 !== 0;
+            const maxRate = Number(max_rate);
+            for (let rate = 1; rate <= maxRate; rate++) {
+                stringStars += generateOverviewStar(false);
+            }
+            if(needHalf)
+                stringStars += generateOverviewStar(true);
+            return stringStars;
+        };
+
+        const makeStar = (max_rate) => {
+            var stringStars = ``;
+            for (let rate = 1; rate <= 5; rate++) {
+                stringStars += generateStar(rate > max_rate);
+            }
+            return stringStars;
+        };
+
+        const reviewsRate = (reviews)=>{
+            let ratingSum = 0;
+            if (Array.isArray(reviews))
+                if (reviews.length >= 1)
+                    reviews.forEach(EachReview=>{
+                        ratingSum += EachReview.rate
+                    })  
+                    return [(ratingSum/reviews.length).toFixed(1), reviews.length]
+            return [0, 0]
+        }
+
+        function calculatePercentages(totalReviews, starsObject) {
+            const percentages = {};
+            for (const key in starsObject) {
+                if (Object.hasOwnProperty.call(starsObject, key)) {
+                    percentages[key] = Math.round((starsObject[key] / totalReviews) * 100);
+                }
+            }
+            return percentages;
+        }
+        const placeReviews = (reviewsList)=>{
+            const commentsWindow = document.getElementById('ReviewsWindow');
+            if (Array.isArray(reviewsList)){
+                if (commentsWindow && reviewsList.length >= 1)
+                    reviewsList.forEach(Each=>{
+                        const stars = makeStar(Each.rate); 
+                        const Review = `
+                            <div class="reviews-members pt-4 pb-4">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <div class="reviews-members-header">
+                                            <span class="star-rating float-right">
+                                                ${stars}
+                                            </span>
+                                            <h6 class="mb-1"><a class="text-black" href="#">${Each.name}</a></h6>
+                                            <h6 style="font-size: 11px;" class="mb-1"><a class="text-black" href="#">${Each.location}</a></h6>
+                                            <p class="text-gray">${Each.posted}</p>
+                                        </div>
+                                        <div class="reviews-members-body">
+                                            <p>placed an order to California, The shipping was fast overall good.</p>
+                                        </div>
+                                        <div class="reviews-members-footer">
+                                            <a class="total-like" href="#"><i class="icofont-thumbs-up"></i> 88K</a> <a class="total-like" href="#"><i class="icofont-thumbs-down"></i> 1K</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                        commentsWindow.innerHTML += Review;
+                    })
+                    commentsWindow.innerHTML += '<a class="text-center w-100 d-block mt-4 font-weight-bold" href="#">See All Reviews</a>';
+            }
+        };
+
+        const CheckIfAdded = (id)=>{
+            const Cart = JSON.parse(localStorage.getItem('MassageCart')) || [];
+            return Cart.includes(Number(id))
+        }
+
+        function setRating(data){
+            const rating_space = document.getElementById('RatingsClosure');
+            const reviews = [{name:'brandon', rate:5, comment:'all good so far', location:'CA, forthwest', posted:'2021 december'}, {name:'brandon', rate:5, comment:'all good so far', location:'CA, forthwest', posted:'2021 december'}, {name:'brandon', rate:3, comment:'all good so far', location:'CA, forthwest', posted:'2021 december'}, {name:'brandon', rate:4, comment:'all good so far', location:'CA, forthwest', posted:'2021 december'}];
+            const rateBase = reviewsRate(reviews);
+            const rate = rateBase[0];
+            const reviews_count = rateBase[1];
+            const first_stars = makeStar(3);
+            const ratingRations = getRation(reviews);
+            placeReviews(reviews);
+            const overviewStars = makeGeneralStar(rate);
+            const percentages = calculatePercentages(reviews_count, ratingRations);
+            const sortedReviews = getPercentRation(reviews);
+            const ratingStructure = `
+                <div class="ratingsSign">
+                    <span class="heading">User Rating</span>
+                    ${first_stars}
+                    <p>${rate} average based on ${reviews_count} reviews.</p>
+                </div>
+                <div class="ratings">
+                    <div class="firstReviewSection">
+                        <h1 style="text-align: center;" class="display-3">${rate}</h1>
+                        ${overviewStars}
+                        <div>
+                            <br>
+                            <h1 style="text-align: center; font-size: 15px;" class="display-6">${reviews_count} Reviews</h1>
+                        </div>
+                    </div>
+                    <div class="secondReviewSection">
+                        <div class="row">
+                        <div class="side">
+                            <div>5 <span class="fa fa-star rating_specific"></span></div>
+                            </div>
+                            <div style="--progress: ${percentages.five}%;" class="middle">
+                                <div class="bar-container">
+                                    <div class="bar-5"></div>
+                                </div>
+                            </div>
+                            <div class="side right">
+                                <div>${sortedReviews.five}</div>
+                            </div>
+                        <div class="side">
+                            <div>4 <span class="fa fa-star rating_specific"></span></div>
+                        </div>
+                        <div class="middle">
+                            <div style="--progress: ${percentages.four}%;" class="bar-container animate_charts">
+                            <div class="bar-4"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>${sortedReviews.four}</div>
+                        </div>
+                        <div class="side">
+                            <div>3 <span class="fa fa-star rating_specific"></span></div>
+                        </div>
+                        <div class="middle">
+                            <div style="--progress: ${percentages.three}%;" class="bar-container">
+                            <div class="bar-3"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>${sortedReviews.three}</div>
+                        </div>
+                        <div class="side">
+                            <div>2 <span class="fa fa-star rating_specific"></span></div>
+                        </div>
+                        <div class="middle">
+                            <div style="--progress: ${percentages.two}%;" class="bar-container">
+                            <div class="bar-2"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>${sortedReviews.two}</div>
+                        </div>
+                        <div class="side">
+                            <div> 1 <span class="fa fa-star rating_specific indented"> </span></div>
+                        </div>
+                        <div class="middle">
+                            <div style="--progress: ${percentages.one}%;" class="bar-container">
+                            <div class="bar-1"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>${sortedReviews.one}</div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            rating_space.innerHTML = ratingStructure;
+        }
+
+        setRating();
+        SetProductCard();
+        UpdateProductStatus();
 
     </script>
 

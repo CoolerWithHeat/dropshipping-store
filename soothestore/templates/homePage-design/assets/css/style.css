@@ -267,8 +267,8 @@ main{
 @media (max-width:800px) {
 
 }
-
-/*//////////////////////////////////////////////////////////// lightbox Style ///////////////////////////////////////////////////////////////////////////*/
+ 
+/*//////////////////////////////////////////////////////////// lightbox Style /////////////////////////////////////////////////////////////////////////* */
 
 .lightbox{
     width: 100vw;
@@ -304,7 +304,8 @@ main{
 }
 
 .prev,.next {
-    cursor: pointer;
+    display: none;
+    /* cursor: pointer;
     position: relative;
     top: -191px;
     display: flex;
@@ -320,20 +321,9 @@ main{
     transition: 0.6s ease;
     border-radius: 100%;
     user-select: none;
-    -webkit-user-select: none;
+    -webkit-user-select: none; */
     }
 
-.next {
-    right:-444px;
-    }
-
-.prev{
-    left:-28px;
-}
-
-.prev:hover,.next:hover {
-    color: var(--primary-Orange);
-}
 
 .mySlides{
     display: none;
@@ -367,7 +357,7 @@ main{
 
 #ulspan img{
     position: absolute;
-    background-color: white;
+    /* background-color: white; */
     top: 28px;
     left: 45px;
   
@@ -431,7 +421,7 @@ main{
 .cart button{
     margin: 1rem 2rem;
     color: white;
-    background-color:var( --primary-Orange) ;
+    /* background-color:var( --primary-Orange) ; */
     font-size: 1.2rem;
     font-size: 400;
     width: 80%;

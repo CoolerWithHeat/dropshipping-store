@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="{% static 'images/Brand.png' %}" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
-    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/CartAnimation.css' %}">
-    <link rel="stylesheet" href="{% static 'css/templatemo-hexashop.css' %}">
-    <link rel="stylesheet" href="{% static 'css/searchfield.css' %}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="{% static 'images/Brand.png' %}" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
+        <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/CartAnimation.css' %}">
+        <link rel="stylesheet" href="{% static 'css/templatemo-hexashop.css' %}">
+        <link rel="stylesheet" href="{% static 'css/searchfield.css' %}">
+        
     </head>
     
     <body>
@@ -47,15 +48,15 @@
                                 </div>                  
                             </li>
                             <li class="scroll-to-section"><a href="#top">Home</a></li>
-                            <li class="submenu">
-                                <a href="javascript:;">Pages</a>
-                                <ul>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="products.html">Products</a></li>
-                                    <li><a href="single-product.html">Single Product</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </li>
+                                <li class="submenu">
+                                    <a href="javascript:;">Pages</a>
+                                    <ul>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="products.html">Products</a></li>
+                                        <li><a href="single-product.html">Single Product</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </li>
                             <li class="submenu">
 
                                 
@@ -78,27 +79,19 @@
                 </div>
                 
             </div>
-            <div class="smaller-wrapper">
-                <div class="s130">
-                    <form>
-                        <div class="inner-form">
-                            <div class="input-field first-wrap">
-                                <div class="svg-wrapper">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                                    </svg>
-                                </div>
-                                <input onclick="AnimateLogo()" id="search" type="text" placeholder="What are you looking for?" />
-                            </div>
-                            <div class="input-field second-wrap">   
-                                <button onclick="AnimateLogo()" style="font-size: smaller;" class="btn-search" type="button">SEARCH</button>
-                            </div>
-                        </div>
-                        <span class="info">ex. Air Massage, Body Scan Tech</span>
-                    </form>
-                </div>
+        
+            <div class="searchBox">
+                <input class="searchInput"type="text" name="" placeholder="Search">
+                <button onclick="OpenSearchBar()" class="searchButton" href="#">
+                    <div class="searchIcon">
+                        <i class="material-icons">
+                            <i id="SearchIconFA" class="fa fa-search" aria-hidden="true"></i>
+                        </i>
+                    </div>
+                </button>
             </div>
         </div>
+        
         <div id='CartHub'>
             <div class="CartBoundaryFixed MobileCart" style="cursor: pointer;">
                 <a href="../../Cart">
@@ -107,6 +100,7 @@
                 </a>
             </div>
         </div>
+        
     </header>
     <br><br><br><br><br><br>
     <section class="section" id="products">
@@ -121,8 +115,9 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
+            <div id="ProductContainer" class="row">
+                
+                <!-- <div class="col-lg-4">
                     <div class="item">
                         <div class="thumb">
                             <div class="hover-content">
@@ -146,7 +141,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-lg-4">
                     <div class="item">
                         <div class="thumb">
@@ -377,7 +372,8 @@
 
 
     <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
-
+    <script src="https://polyfill.io/v3/polyfill.js?features=Promise%2CObject.entries%2CObject.assign"></script>
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.1/dist/algoliasearch.umd.min.js"></script>
     <script src="{% static 'js/popper.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/owl-carousel.js' %}"></script>
@@ -394,6 +390,59 @@
     <script src="{% static 'js/custom.js' %}"></script>
 
     <script>
+        // const client = algoliasearch('K7LWE7RYA4', 'dd84d643cb097b484b87bf0a2c35d742')
+        // const products = client.initIndex('MassageChair')
+        // const searchQuery = '*';
+        // const filters = 'price > 15000 OR rating > 4.5';
+        // products.search(searchQuery, {filters: filters}).then(({ hits }) => {
+        //     console.log(hits)
+        //     if (hits.length)
+        //         hits.forEach(Each=>{
+        //             const container = document.getElementById('ProductContainer');
+        //             const product = extractProductData(Each);
+        //             container.innerHTML += product;
+        //         }
+        //     )
+        // });
+        function extractProductData(algoliaData) {
+            const title = algoliaData.title;
+            const price = algoliaData.price;
+            const description = algoliaData.description;
+            const brand = algoliaData.brand;
+            const availableColors = algoliaData.color_options;
+            const features = algoliaData.chair_features; 
+            const purchased = algoliaData.purchased;
+            const rating = algoliaData.rating;
+            const posted = algoliaData.posted;
+            const product_id = algoliaData.objectID;
+            const rating_stars = getRating(rating);
+            const Cart = JSON.parse(localStorage.getItem('MassageCart')) || [];
+            const style = Cart.some(item => item.product_id === 2) ? "color: rgb(127,255,212);" : null;
+            const blackColor_Url = availableColors[0][2];
+            const Products = `
+                <div class="col-lg-4">
+                    <div class="item">
+                        <div class="thumb">
+                            <div class="hover-content">
+                                <ul>
+                                    <li><a href="../Buy/${product_id}/"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                    <li><a><i style="${style}" data-id="${product_id}" onclick="AddToCard(event)" class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <img src="${blackColor_Url}" alt="">
+                        </div>
+                        <div class="down-content">
+                            <h4>${title}</h4>
+                            <span>$${Number(price).toFixed(2)}</span>
+                            ${rating_stars.outerHTML}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            return Products;
+        }
 
         $(function() {
             var selectedClass = "";
@@ -408,6 +457,30 @@
                 
             });
         });
+
+        const getRating = (rating) => {
+            const StarsHub = document.createElement('ul');
+            StarsHub.className = 'stars';
+            const wholeRating = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+
+            for (let i = 0; i < wholeRating; i++) {
+                const star = document.createElement('li');
+                const icon = document.createElement('i');
+                icon.className = 'fa fa-star';
+                star.appendChild(icon);
+                StarsHub.appendChild(star);
+            }
+            
+            const classname = hasHalfStar ? 'fa fa-star' : 'fa fa-star-half';
+            const halfStar = document.createElement('li');
+            const halfStarIcon = document.createElement('i');
+            halfStarIcon.className = classname;
+            halfStar.appendChild(halfStarIcon);
+            StarsHub.appendChild(halfStar);
+
+            return StarsHub;
+        };
 
         var logoElement = document.getElementById('LogoPoint');
         document.addEventListener('DOMContentLoaded', function() {
@@ -443,9 +516,83 @@
         
             return [savedProducts.length, isRemoved];
         }
+
+        function OpenSearchBar(fadeout=true){
+            const searchBar = document.getElementsByClassName('searchBox')[0]
+            const in_closed_state = !searchBar.classList.contains('openedSearch')
+            if (in_closed_state)
+                searchBar.classList.add('openedSearch')
+                AnimateSearchIcon()
+        }
+
+        const FadaAwaySearch = (fadeout=true)=>{
+            const searchBar = document.getElementsByClassName('searchBox')[0]
+            if (!fadeout){
+                    searchBar.classList.remove('Appear');
+                    searchBar.classList.add('Disappear');
+            }else{
+                searchBar.classList.remove('Disappear');
+                searchBar.classList.add('Appear');
+            }
+        }
+
+        function CloseSearchBar(fadeout=true){
+            const searchBar = document.getElementsByClassName('searchBox')[0]
+            const in_open_state = searchBar.classList.contains('openedSearch')
+            if (in_open_state)
+                searchBar.classList.remove('openedSearch')
+                AnimateSearchIcon()
+            }
+        
+        function AnimateSearchIcon() {
+            const SearchIcon = document.getElementById('SearchIconFA');
+            const className = 'SearchIconAnimation';
+            const isAlreadyOpened = SearchIcon.classList.contains(className);
+            if (isAlreadyOpened) {
+                SearchIcon.classList.remove(className);
+                setTimeout(() => {
+                SearchIcon.classList.add(className);
+                }, 10);
+
+            } else {
+                SearchIcon.classList.add(className);
+            }
+        }
+
+        function TeachHow() {
+            const searchInput = document.querySelector('.searchInput');
+            const inputText = 'I Want Air Massage';
+            let index = 0;
+            let addTextIntervalId;
+
+            addTextIntervalId = setInterval(function () {
+                searchInput.value = inputText.slice(0, index);
+                index++;
+                if (index > inputText.length) {
+                clearInterval(addTextIntervalId);
+
+                setTimeout(() => {
+                    let clearIndex = inputText.length;
+
+                    const clearTextIntervalId = setInterval(function () {
+                    searchInput.value = inputText.slice(0, clearIndex);
+                    clearIndex--;
+
+                    if (clearIndex < 0) {
+                        clearInterval(clearTextIntervalId);
+                    }
+                    }, 20);
+                }, 777);
+                }
+            }, 50);
+
+            localStorage.setItem('CustomerAwareness', true)
+            return true
+        }
+
+
         function AddToCard(data=null){
             const product_id = data.target.dataset.id ? Number(data.target.dataset.id) : null;
-            console.log(data.target.dataset.id)
             const result = ManageCart(product_id);
             const total_products = result[0];
             const current_color = result[1] ? '#343a40' : 'rgb(127,255,212)';
@@ -482,11 +629,71 @@
             Datapath.textContent = total_products;
             Cart.forEach(Each=>{
                 const element = document.querySelector(`[data-id="${Each.product_id}"]`);
-                element.style.color = 'rgb(127,255,212)';
+                if (element)
+                    element.style.color = 'rgb(127,255,212)';
             })
         }
-        
-        SetProductCard()
+
+
+        function HandleSearchBarState(){
+            const SearchBar = document.getElementsByClassName('searchBox')[0];
+            const AwareCustomer = JSON.parse(localStorage.getItem('CustomerAwareness')) || false
+            if (!AwareCustomer){
+                setTimeout(() => {
+                    OpenSearchBar();
+                }, 999);
+
+                setTimeout(() => {
+                    TeachHow();
+                }, 1500);
+
+                setTimeout(() => {
+                    CloseSearchBar();
+                }, 4000);
+
+                setTimeout(() => {
+                    window.addEventListener("scroll", function() {
+                        const searchBar = document.getElementsByClassName('searchBox')[0]
+                        const in_open_state = searchBar.classList.contains('openedSearch')
+                        if (window.scrollY > 100) {
+                            if (in_open_state){
+                                CloseSearchBar();
+                            }
+                        }
+                        if (window.scrollY < 50) {
+                            if (!in_open_state)
+                                OpenSearchBar();
+                        }
+                    });    
+                }, 3800);
+                
+            }else{
+                window.addEventListener("scroll", function() {
+                        const searchBar = document.getElementsByClassName('searchBox')[0]
+                        const in_open_state = searchBar.classList.contains('openedSearch')
+                        if (window.scrollY > 100) {
+                            if (in_open_state){
+                                CloseSearchBar();
+                            }
+                        }
+                        if (window.scrollY < 50) {
+                            if (!in_open_state)
+                                OpenSearchBar();
+                        }
+                        if (window.scrollY > 450) {
+                            if (!in_open_state)
+                            FadaAwaySearch(false);
+                        }
+                        if (window.scrollY < 300) {
+                            if (!in_open_state)
+                            FadaAwaySearch();
+                        }
+                    });
+                }
+            }
+
+        HandleSearchBarState();
+        SetProductCard();
     </script>
 
 </body>
