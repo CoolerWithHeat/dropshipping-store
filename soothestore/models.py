@@ -42,7 +42,7 @@ class Brand(models.Model):
 
 class MassageChair(models.Model):
     title = models.CharField(max_length=35)
-    brand = models.OneToOneField(Brand, on_delete=models.DO_NOTHING)
+    brand = models.ForeignKey(Brand, on_delete=models.DO_NOTHING)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField(default=None)
     available_colors = models.ManyToManyField('Color_Options', related_name='massage_chairs')

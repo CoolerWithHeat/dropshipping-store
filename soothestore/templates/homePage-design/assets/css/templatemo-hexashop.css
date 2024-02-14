@@ -2348,14 +2348,11 @@ responsive
 }
 
 
-.brandLogo{
-  --a: 1deg;
-  aspect-ratio: 5;
+.brandLogo {
+  aspect-ratio: auto;
   border-radius: 10px;
-  transform: perspective(400px) rotate3d(var(--r,1,-1),0,calc(var(--i,1)*var(--a)));
-  -webkit-mask: 
-    linear-gradient(135deg,#000c 40%,#000,#000c 60%)
-    100% 100%/250% 250%;
+  transform: perspective(400px) rotate3d(var(--r,1,-1),0,calc(var(--i,1)*1deg)); /* Adjust transformation */
+  -webkit-mask: linear-gradient(135deg, #000c 40%, #000, #000c 60%) 100% 100%/250% 250%;
   transition: .4s;
   cursor: pointer;
 }

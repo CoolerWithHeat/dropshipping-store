@@ -9,7 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="{% static 'css/animationonly.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'css/cart.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/brandAnimation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/AnimatedButtonCart.css' %}">
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         rel="stylesheet"
@@ -22,6 +23,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
         rel="stylesheet"
     />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/BuyCart.css' %}">   
+</head>
     </head>
     
     <body>
@@ -33,16 +36,18 @@
             <div></div>
         </div>
     </div>
+    
+    <div id="loadingWindow" class="invisibleField" style="margin: auto;width: 99%; height: 99%; z-index: 9; background-color: rgb(199, 199, 199); opacity: 0.8; position: fixed;">
+      <div id="loader" style="transform: translate(-50%, -50%); top: 50%; left: 50%; position: absolute;" class="loader"></div>
+    </div>
     <section class="h-100 h-custom" style="background-color: #eee;">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col">
               <div class="card">
                 <div class="card-body p-4">
-      
                   <div class="row">
-      
-                    <div class="col-lg-7">
+                    <div id="CartProductsClosure" class="col-lg-7">
                       <h5 class="mb-3"><a href="#!" class="text-body"><i
                             class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
                       <hr>
@@ -50,118 +55,11 @@
                       <div class="d-flex justify-content-between align-items-center mb-4">
                         <div>
                           <p class="mb-1">Shopping cart</p>
-                          <p class="mb-0">You have 4 items in your cart</p>
+                          <p id="AmountDetails" class="mb-0"></p>
                         </div>
                       </div>
-      
-                      <div class="card mb-3">
-                        <div class="card-body">
-                          <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                            <div>
-                                <img
-                                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
-                                class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                            </div>
-                            <div class="ms-3">
-                                <h5>Iphone 11 pro</h5>
-                                <p class="small mb-0">256GB, Navy Blue</p>
-                            </div>
-                            </div>
-                            <div class="d-flex flex-row align-items-center">
-                              <div style="width: 50px;">
-                                <h5 class="fw-normal mb-0">2</h5>
-                              </div>
-                              <div style="width: 80px;">
-                                <h5 class="mb-0">$900</h5>
-                              </div>
-                                <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-      
-                      <div class="card mb-3">
-                        <div class="card-body">
-                          <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                              <div>
-                                <img
-                                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img2.webp"
-                                  class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                              </div>
-                              <div class="ms-3">
-                                <h5>Samsung galaxy Note 10 </h5>
-                                <p class="small mb-0">256GB, Navy Blue</p>
-                              </div>
-                            </div>
-                            <div class="d-flex flex-row align-items-center">
-                              <div style="width: 50px;">
-                                <h5 class="fw-normal mb-0">2</h5>
-                              </div>
-                              <div style="width: 80px;">
-                                <h5 class="mb-0">$900</h5>
-                              </div>
-                              <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-      
-                      <div class="card mb-3">
-                        <div class="card-body">
-                          <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                              <div>
-                                <img
-                                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img3.webp"
-                                  class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                              </div>
-                              <div class="ms-3">
-                                <h5>Canon EOS M50</h5>
-                                <p class="small mb-0">Onyx Black</p>
-                              </div>
-                            </div>
-                            <div class="d-flex flex-row align-items-center">
-                              <div style="width: 50px;">
-                                <h5 class="fw-normal mb-0">1</h5>
-                              </div>
-                              <div style="width: 80px;">
-                                <h5 class="mb-0">$1199</h5>
-                              </div>
-                              <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-      
-                      <div class="card mb-3 mb-lg-0">
-                        <div class="card-body">
-                          <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                              <div>
-                                <img
-                                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
-                                  class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                              </div>
-                              <div class="ms-3">
-                                <h5>MacBook Pro</h5>
-                                <p class="small mb-0">1TB, Graphite</p>
-                              </div>
-                            </div>
-                            <div class="d-flex flex-row align-items-center">
-                              <div style="width: 50px;">
-                                <h5 class="fw-normal mb-0">1</h5>
-                              </div>
-                              <div style="width: 80px;">
-                                <h5 class="mb-0">$1799</h5>
-                              </div>
-                              <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-      
+
+
                     </div>
                     <div class="col-lg-5">
       
@@ -185,7 +83,7 @@
       
                           <form class="mt-4">
                             <div class="form-outline form-white mb-4">
-                            <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                            <input onclick="AnimateLogo('fast');" type="text" id="typeName" class="form-control form-control-lg" siez="17"
                                 placeholder="Cardholder's Name" />
                             <label class="form-label" for="typeName">Cardholder's Name</label>
                             </div>
@@ -215,37 +113,17 @@
       
                           </form>
       
-                          <hr class="my-4">
-      
-                          <div class="d-flex justify-content-between">
-                            <p class="mb-2">Subtotal</p>
-                            <p class="mb-2">$4798.00</p>
-                          </div>
-      
-                          <div class="d-flex justify-content-between">
-                            <p class="mb-2">Shipping</p>
-                            <p class="mb-2">$20.00</p>
-                          </div>
-      
-                          <div class="d-flex justify-content-between mb-4">
-                            <p class="mb-2">Total(Incl. taxes)</p>
-                            <p class="mb-2">$4818.00</p>
-                          </div>
-      
-                          <button type="button" class="btn btn-info btn-block btn-lg">
-                            <div class="d-flex justify-content-between">
-                              <span>$4818.00</span>
-                              <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
-                            </div>
-                          </button>
-      
+    
+                        <div id="PriceHolder">
+                        </div>
+
                         </div>
                       </div>
       
                     </div>
       
                   </div>
-      
+                  
                 </div>
               </div>
             </div>
@@ -268,59 +146,196 @@
 
 
     <script>
-
-        // $(function() {
-        //     var selectedClass = "";
-        //     $("p").click(function(){
-        //     selectedClass = $(this).attr("data-rel");
-        //     $("#portfolio").fadeTo(50, 0.1);
-        //         $("#portfolio div").not("."+selectedClass).fadeOut();
-        //     setTimeout(function() {
-        //     $("."+selectedClass).fadeIn();
-        //     $("#portfolio").fadeTo(50, 1);
-        //     }, 500);
+        const host = window.location.protocol + '//' +window.location.host  + '/'
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+            $("."+selectedClass).fadeIn();
+            $("#portfolio").fadeTo(50, 1);
+            }, 500);
                 
-        //     });
-        // });
+            });
+        });
+    
+    const logoElement = document.getElementById('LogoPoint');
+    
+    function AnimateLogo(fast=false){
+        logoElement.classList.add('active');
+        setTimeout(() => {
+            logoElement.classList.remove('active');
+        }, fast ? 499 : 1000);
+    }
 
-    // const logoElement = document.getElementById('LogoPoint');
+    const makeProduct = (productData)=>{
+      const window = document.getElementById('CartProductsClosure');
+      const productStructure = `
+          <div class="card mb-3 mb-lg-0">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex flex-row align-items-center">
+                    <div>
+                      <img
+                        src="${productData.image}"
+                        class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                    </div>
+                    <div class="ms-3">
+                      <h5>${productData.title}</h5>
+                      <p class="small mb-0">${productData.color}</p>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center">
+                    <div style="width: 50px;">
+                      <h5 class="fw-normal mb-0">${productData.quantity}</h5>
+                    </div>
+                    <div style="width: 80px;">
+                      <h5 class="mb-0">${productData.price}</h5>
+                    </div>
+                    <div id="app-cover">
+                      <input data-id='${productData.id}' onclick='RemoveOuttaCart(event);' type="checkbox" id="checkbox">
+                      <div id="bin-icon">
+                        <div id="lid"></div>
+                        <div id="box">
+                          <div id="box-inner">
+                            <div id="bin-lines"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="layer"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+      if (window)
+        window.innerHTML += productStructure;
+    };
 
-    // function AnimateLogo(){
-    //     setTimeout(() => {
-    //         logoElement.classList.add('active');
-    //     }, 999);
-    //     setTimeout(() => {
-    //         logoElement.classList.remove('active');
-    //     }, 1699);
-    //     var h4Element = document.createElement('h4');
+    const FetchCart = async (UsersCart)=>{
+      const verifiedResponse = await fetch(host+'VerifyCart/', {
+        method: "POST",
+        body: JSON.stringify(UsersCart)
+      });
+      if (verifiedResponse.status == 200){
+        const parsedData = await verifiedResponse.json();
+        if (parsedData.cart){
+          const total_price = parsedData.total_price
+          console.log('server-response', parsedData)
+          const verified_products = parsedData.verified_products
+          setOuterDetails({total_price, verified_products});
+          if (Array.isArray(parsedData.cart))
+            parsedData.cart.forEach(each=>makeProduct(each))
+          }
+        else
+          ResetCart()
+      }
+      lockwindow(false);
+    };
 
-    //     // Set the style attributes
-    //     h4Element.style.color = 'white';
-    //     h4Element.style.textAlign = 'left';
+    const getCheckData = ()=>{
+      lockwindow();
+      resetProductWindow();
+      const Cart = JSON.parse(localStorage.getItem('MassageCart')) || [];
+      if (Cart)
+        FetchCart(Cart)
+    };
 
-    //     // Set the text content
-    //     h4Element.textContent = 'Welcome!';
-    //     h4Element.id = 'BrandText'
 
-    //     // Get the div with id "GreetingHub"
-    //     var greetingHubDiv = document.getElementById('GreetingHub');
+    const resetProductWindow = ()=>{
+      const window = document.getElementById('CartProductsClosure');
+      window.innerHTML = `
+      <h5 class="mb-3"><a href="#!" class="text-body">
+        <i class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
+        <hr>
 
-    //     // Append the h4 element to the div
-    //     setTimeout(() => {
-    //         greetingHubDiv.appendChild(h4Element);
-    //     }, 999);
-    // }
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <p class="mb-1">Shopping cart</p>
+          <p id="AmountDetails" class="mb-0"></p>
+        </div>
+      </div>`;
+      return true;
+    };
+    
+    const setOuterDetails = (outerDetails)=>{
+      const amountHeader = document.getElementById('AmountDetails');
+      const priceHeader = document.getElementById('PriceHolder');
+      const amount = outerDetails.verified_products;
+      const shipping_cost = outerDetails.shipping || 0;
+      const total = outerDetails.total_price || 0;
+      amountHeader.innerText = `You have ${amount} items in your cart`;
+      const priceStructure = `
+            <hr class="my-4">
+              <div class="d-flex justify-content-between">
+                <p class="mb-2">Subtotal</p>
+                <p class="mb-2" id="Subtotal">$${total}</p>
+              </div>
 
-    //     function HandleInitialScroll(event) {
-    //         const chatButton = document.getElementsByClassName('glow-on-hover')[0]
-    //         if (chatButton)
-    //             chatButton.classList.add('incorporate')
-    //             window.removeEventListener('scroll', HandleInitialScroll);
-    //     }
+              <div class="d-flex justify-content-between">
+                <p class="mb-2">Shipping</p>
+                <p class="mb-2" id="shipping">${shipping_cost ? `$${shipping_cost}` : 'Free'}</p>
+              </div>
 
-    //     window.addEventListener('scroll', HandleInitialScroll);
-    //     window.addEventListener('DOMContentLoaded', AnimateLogo);
+              <div class="d-flex justify-content-between mb-4">
+                <p class="mb-2">Total(Incl. taxes)</p>
+                <p class="mb-2" id="Final">$${total}</p>
+              </div>
 
+              <button type="button" class="btn btn-info btn-block btn-lg">
+                <div class="d-flex justify-content-between">
+                  <span id="FinalPrice">$${total}</span>
+                  <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                </div>
+            </button>`;
+      priceHeader.innerHTML = priceStructure;
+    }
+
+    function ManageCart(product_id, quantity = 1) {
+            const savedProducts = JSON.parse(localStorage.getItem('MassageCart')) || [];
+            let isRemoved = false;
+        
+            const index = savedProducts.findIndex(product => product.product_id === product_id);
+        
+            if (index === -1) {
+                savedProducts.push({ product_id: Number(product_id), quantity: Number(quantity) });
+            } else {
+                savedProducts.splice(index, 1);
+                isRemoved = true;
+            }
+        
+            localStorage.setItem('MassageCart', JSON.stringify(savedProducts));
+        
+            return [savedProducts.length, isRemoved];
+      }
+
+      const RemoveOuttaCart = (event)=>{
+        const savedProducts = JSON.parse(localStorage.getItem('MassageCart')) || [];
+        console.log(savedProducts)
+          const id = event.target ? Number(event.target.dataset.id) : null;
+          if (id){
+            ManageCart(id);
+            lockwindow();
+            setTimeout(() => {
+              getCheckData();
+            }, 999);
+          }
+      };
+
+      const ResetCart = (event)=>{
+        localStorage.setItem('MassageCart', JSON.stringify([]));
+      };
+
+      const lockwindow = (lockit=true)=>{
+        const window = document.getElementById('loadingWindow');
+        if (lockit)
+          window.classList.remove('invisibleField')
+        else
+          window.classList.add('invisibleField')
+      };
+      getCheckData();
     </script>
 
 </body>

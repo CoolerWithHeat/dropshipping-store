@@ -2,6 +2,7 @@ from django.shortcuts import render
 from algoliasearch_django import raw_search
 from .models import MassageChair
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from .models import MassageChair
 from .serializers import MassageChairSerializer
 import json
@@ -39,9 +40,32 @@ def FAQ(request):
 def Cart(request):
     return render(request, 'homePage-design/finalcart.html')
 
-def CheckCart(request):
-    def get(self, request, *args, **kwargs):
-        product_ids = json.loads(request.body) if request.body else []
-        # massage_chairs = MassageChair.objects.filter(id__in=product_ids)
-        # serializer = MassageChairSerializer(massage_chairs, many=True)
-        return Response({'true':'true'})
+class CheckCart(APIView):
+    def post(self, request, *args, **kwargs):
+        products = json.loads(request.body) if request.body else []
+        total_price = 0
+        verified_cart = []
+        try:
+            product_ids = [product['product_id'] for product in products]
+            verified_products = MassageChair.objects.filter(id__in=product_ids)
+            for each in verified_products:
+                desired_product_id = each.id
+                desired_product = next((product for product in products if product['product_id'] == desired_product_id), None)
+                product_object = {}
+                if desired_product:
+                    product_object['id'] = each.id
+                    product_object['title'] = each.title
+                    product_object['quantity'] = desired_product['quantity']
+                    product_object['price'] = each.price
+                    total_price += (each.price * desired_product['quantity'])
+                    images = each.available_colors.all()
+                    if images:
+                        image_url = images[0].image.url
+                        color = str(images[0])
+                        product_object['color'] = color
+                        product_object['image'] = image_url
+                    verified_cart.append(product_object)
+        except:
+            pass
+        
+        return Response({'cart': verified_cart, 'total_price': total_price, 'verified_products':len(verified_cart)}, status=200)

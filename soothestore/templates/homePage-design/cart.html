@@ -260,5 +260,13 @@
                 
             });
         });
+        var logoElement = document.getElementById('LogoPoint');
+        function AnimateLogo(fast=false){
+          logoElement.classList.add('active');
+          setTimeout(() => {
+              logoElement.classList.remove('active');
+          }, fast ? 499 : 1000);
+      }
+      AnimateLogo('faster')
     </script>
   </body>

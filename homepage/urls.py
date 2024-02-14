@@ -9,4 +9,5 @@ urlpatterns = [
     path('Buy/<int:product_id>/', Buy),
     path('FAQ/', FAQ),
     path('Cart/', Cart),
+    path('VerifyCart/', CheckCart.as_view()),
 ]
