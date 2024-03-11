@@ -13,8 +13,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/ratings.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/comments.css' %}">      
-    <link rel="stylesheet" type="text/css" href="{% static 'css/CartAnimation.css' %}">         
-    <link rel="stylesheet" type="text/css" href="{% static 'css/BuyCart.css' %}">                                                   
+    <link rel="stylesheet" type="text/css" href="{% static 'css/CartAnimation.css' %}">  
+    <link rel="stylesheet" type="text/css" href="{% static 'css/BuyCart.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/productDescriptionStyle.css' %}">                                                     
     <link rel="stylesheet" href="{% static 'css/templatemo-hexashop.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.4.55/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -24,7 +25,6 @@
     <link rel="stylesheet" href="{% static 'css/warnings.css' %}">
 </head>
     <body>
-
     <div id="preloader">
         <div class="jumper">
             <div></div>
@@ -131,6 +131,7 @@
             </div>
         </div>
         <main>
+            <!------------------------------------------- Mobile View ------------------------------------------ -->
         <div class="MobileProductView">
             <div class="slider-container" id="new-products">
                 <div class="slides-wrapper">
@@ -160,6 +161,7 @@
                 </div>
                 </div>
         </div>
+                    <!------------------------------------------- Desktop View --------------------------------------------->
         <div class="DesktopProductView">
             <div class="imgs-col">
                 <div class="main-img">
@@ -203,15 +205,18 @@
             <small id="deducted" data-amount="250">-$250</small>
             </span>
             <span id="old-price">$4249</span>
-                <div id="Quantity" class="options">
-                    <button id="quantityButton"><img src="{% static 'images/BuyPage/icon-minus.svg' %}" alt="" onclick="minus()"></button>
-                    <button class='ProductQuantity' style="width: 5px;" id="result">1</button>
-                    <button id="quantityButton" onclick="plus()"><img src="{% static 'images/BuyPage/icon-plus.svg' %}" alt=""></button>
-                    <div id="UserCardBase" class="buttons" data-id="1" onclick="AddToCart(event);"> <button class="cart-button"> <h6 id="CartButtonState" class="defaultCartState">Add to Cart</h6> <i class="fa fa-shopping-cart"></i> <i class="fa fa-square"></i> </button> </div>
-                </div>
+            <div id="Quantity" class="options">
+                <button id="quantityButton"><img src="{% static 'images/BuyPage/icon-minus.svg' %}" alt="" onclick="minus()"></button>
+                <button class='ProductQuantity' style="width: 5px;" id="result">1</button>
+                <button id="quantityButton" onclick="plus()"><img src="{% static 'images/BuyPage/icon-plus.svg' %}" alt=""></button>
+                <div id="UserCardBase" class="buttons" data-id="1" onclick="AddToCart(event);"> <button class="cart-button"> <h6 id="CartButtonState" class="defaultCartState">Add to Cart</h6> <i class="fa fa-shopping-cart"></i> <i class="fa fa-square"></i> </button> </div>
             </div>
+        </div>
     
         </main>
+
+        <div id="ShowcaseHub"></div>
+
         <br><br><br><br>
         <div id="RatingsClosure">
             <div class="ratingsSign">
@@ -940,6 +945,68 @@
 
             rating_space.innerHTML = ratingStructure;
         }
+        const test_url = "https://relaxtheback.com/cdn/shop/files/SuperNovo-2.0_CREAM_Hero_Model_5b4001a4-c8bc-4eaa-ac5b-6dde71a98410_1500x1500.jpg?v=1699045917"
+        const test_description = "This cutting-edge technology performs an incredibly fast and accurate assessment, promptly detecting your shoulder height. Once this vital information is collected, the chair skillfully maps out a customized massage experience tailored precisely to your body's unique dimensions."
+        
+        function PlaceShowcaseCard(data, image="left"){
+            const Showcasehub = document.getElementById('ShowcaseHub') 
+            const image_url = data.image_url
+            const showcaseText = data.description
+            const image_tag = `
+                <div class="product-img">
+                    <img src="${image_url}" height="420" width="327">
+                </div>
+            `
+            const description_tag = `
+                <div class="product-info">
+                    <div class="product-text">
+                    <h1 id="ProductShowcaseHeader">ACUPOINT® BODY SENSING</h1>
+                    <br>
+                    <p id="ProductShowcaseDescription">${showcaseText}</p>
+                    </div>
+                </div>
+            `
+            const showcaseCard = `
+                <div class="ProductShowcase">
+                    <div>
+                        <div class="wrapper">
+                            ${image=="left" ? image_tag : description_tag}
+                            ${image=="right" ? image_tag : description_tag}
+                        </div>
+                    </div>
+                </div>
+            `
+            Showcasehub.innerHTML += showcaseCard
+
+        }
+        PlaceShowcaseCard({image_url: test_url, description:test_description})
+        // -------------------------------------------- Text Animation -----------------------------------------------------
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var productShowcaseHeader = document.getElementById("ProductShowcaseHeader");
+            var productShowcaseDescription = document.getElementById("ProductShowcaseDescription");
+            var textRevealed = false;
+            
+            function revealText() {
+                var headerRect = productShowcaseHeader.getBoundingClientRect();
+                var descriptionRect = productShowcaseDescription.getBoundingClientRect();
+                
+                if (!textRevealed && headerRect.top < window.innerHeight - headerRect.height / 2) {
+                    productShowcaseHeader.classList.add("text-reveal");
+                    productShowcaseDescription.classList.add("text-reveal");
+                    textRevealed = true;
+                }
+                
+                if (!textRevealed && descriptionRect.top < window.innerHeight - descriptionRect.height / 2) {
+                    productShowcaseHeader.classList.add("text-reveal");
+                    productShowcaseDescription.classList.add("text-reveal");
+                    textRevealed = true;
+                }
+            }
+            
+            window.addEventListener("scroll", revealText);
+            revealText();
+        });
 
         setRating();
         SetProductCard();

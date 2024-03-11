@@ -1,7 +1,7 @@
   #app-cover {
     position: absolute;
-    right: 5px;
-    bottom: 5px;;
+    right: 0;
+    bottom: 0 ;
     width: 40px;
     height: 40px;
     margin: -98px auto 0 auto;
@@ -9,8 +9,7 @@
     border-radius: 50%;
     box-shadow: 0 0 0 2px #ffdedc;
     overflow: hidden;
-    }
-  
+  }
   #checkbox {
     cursor: pointer;
     position: absolute;

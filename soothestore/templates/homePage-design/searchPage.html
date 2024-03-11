@@ -2,7 +2,6 @@
 {% load static %}
 <html lang="en">
     <head>
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -11,15 +10,16 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/cart.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/CartAnimation.css' %}">
         <link rel="stylesheet" href="{% static 'css/templatemo-hexashop.css' %}">
         <link rel="stylesheet" href="{% static 'css/searchfield.css' %}">
-        
+        <link rel="stylesheet" href="{% static 'css/filterSlider.css' %}">
+        <link rel="stylesheet" href="{% static 'css/accordition.css' %}">
     </head>
     
     <body>
-
     <div id="preloader">
         <div class="jumper">
             <div></div>
@@ -79,7 +79,6 @@
                 </div>
                 
             </div>
-        
             <div class="searchBox">
                 <input class="searchInput"type="text" name="" placeholder="Search">
                 <button onclick="OpenSearchBar()" class="searchButton" href="#">
@@ -91,7 +90,6 @@
                 </button>
             </div>
         </div>
-        
         <div id='CartHub'>
             <div class="CartBoundaryFixed MobileCart" style="cursor: pointer;">
                 <a href="../../Cart">
@@ -100,7 +98,6 @@
                 </a>
             </div>
         </div>
-        
     </header>
     <br><br><br><br><br><br>
     <section class="section" id="products">
@@ -112,264 +109,66 @@
                         <span>Check out all of our products.</span>
                     </div>
                 </div>
+                <div id="filterFrame">
+                    <div class="product-filters">
+                        <ul class="mobile-product-filters vertical menu show-for-small-only" data-accordion-menu>
+                         <li>
+                            <h2 style="margin-left: 22px;">Filters</h2>
+                            <div class="c">
+                                <input class="input" type="checkbox" id="faq-3">
+                                <h1 class="optionLabel"><label style="color: rgb(53, 53, 53);" for="faq-3">Price</label></h1>
+                                <div class="p">
+                                    <div id="PriceRange">
+                                        <input id="MinPriceField" class="form-control" type="text" placeholder="Min">
+                                        <h4 style="font-weight: 200;">-</h4>
+                                        <input id="MaxPriceField" class="form-control" type="text" placeholder="Max">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c">
+                                <input class="input" type="checkbox" id="faq-4">
+                                <h1 class="optionLabel"><label style="color: rgb(53, 53, 53);" for="faq-4">Brand</label></h1>
+                                <div class="p">
+                                <p>I was inpired by an article on css-tricks.
+                                </p>
+                                </div>
+                            </div>
+                            <div class="c">
+                                <input class="input" type="checkbox" id="faq-5">
+                                <h1 class="optionLabel"><label style="color: rgb(53, 53, 53);" for="faq-5">Type</label></h1>
+                                <div class="p">
+                                <p>I was inpired by an article on css-tricks.
+                                </p>
+                                </div>
+                            </div>
+                            <div class="c">
+                                <input class="input" type="checkbox" id="faq-6">
+                                <h1 class="optionLabel"><label style="color: rgb(53, 53, 53);" for="faq-6">Color</label></h1>
+                                <div class="p">
+                                <p>I was inpired by an article on css-tricks.
+                                </p>
+                                </div>
+                            </div>
+                            <div class="c">
+                                <input class="input" type="checkbox" id="faq-7">
+                                <h1 class="optionLabel"><label style="color: rgb(53, 53, 53);" for="faq-7">Size</label></h1>
+                                <div class="p">
+                                <p>I was inpired by an article on css-tricks.
+                                </p>
+                                </div>
+                            </div>
+                         </li>
+                       </ul>
+                       
+                </div>
             </div>
         </div>
         <div class="container">
-            <div id="ProductContainer" class="row">
-                
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="../../Buy/1/"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a><i data-id="1" onclick="AddToCard(event)" class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="https://richmedia.ca-richimage.com/ImageDelivery/imageService?profileId=12026540&id=1579459&recipeId=729" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Classic Spring</h4>
-                            <span>$120.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="../../Buy/1/"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a><i data-id="2" onclick="AddToCard(event)" class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="https://e9w2fg8sy43.exactdn.com/wp-content/uploads/2021/11/2-39.jpeg?strip=all&lossy=1&ssl=1" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Air Force 1 X</h4>
-                            <span>$90.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="../../Buy/1/"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a><i data-id="3" onclick="AddToCard(event)" class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="https://media.kohlsimg.com/is/image/kohls/5764336?wid=620&hei=620&op_sharpen=1" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Love Nana ‘20</h4>
-                            <span>$150.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="../../Buy/1/"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li data-id="4" onclick="AddToCard(event)"><a><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="https://emassagechair.com/cdn/shop/products/osaki-os-champ-black-and-gray-45.jpg?v=1666398843" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>New Green Jacket</h4>
-                            <span>$75.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="../../Buy/1/"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li data-id="5" onclick="AddToCard(event)"><a><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="https://cdn4.volusion.store/onpx9-9oudp/v/vspfiles/photos/OS-4000-2.jpg?v-cache=1699407481" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Classic Dress</h4>
-                            <span>$45.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="../../Buy/1/"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li data-id="6" onclick="AddToCard(event)"><a><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="https://osakimassagechair.com/cdn/shop/products/osaki-os-7200h-pinnacle-cream-402253_512x512.jpg?v=1690578826" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Spring Collection</h4>
-                            <span>$130.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="../../Buy/1/"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li data-id="7" onclick="AddToCard(event)"><a><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="https://storage.googleapis.com/massagechairdeals/Osaki-OS-7200CR-Massage-Chair-Brown-1.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>School Collection</h4>
-                            <span>$80.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="../../Buy/1/"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="https://osakimassagechair.com/cdn/shop/products/osaki-os-4000t-black-766887_512x512.jpg?v=1690578931" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Summer Cap</h4>
-                            <span>$12.00</span>
-                            <br>
-                            <div>
-                                <ul class="stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="../../Buy/1/"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="https://www.reclinerland.com/wp-content/uploads/2020/07/Osaki-OS-4000.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Classic Kid</h4>
-                            <span>$30.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="pagination">
-                        <ul>
-                            <li class="active">
-                                <a href="#">1</a>
-                            </li>
-                            <li >
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            
+            <div id="ProductContainer" class="row"></div>
+            <div id="PaginationSection" class="col-lg-12"></div>
         </div>
     </section>
-
 
     <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
     <script src="https://polyfill.io/v3/polyfill.js?features=Promise%2CObject.entries%2CObject.assign"></script>
@@ -383,27 +182,35 @@
     <script src="{% static 'js/waypoints.min.js' %}"></script>
     <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
     <script src="{% static 'js/imgfix.min.js' %}"></script>
-    <script src="{% static 'js/slick.js' %}"></script>
-    <script src="{% static 'js/lightbox.js' %}"></script>
+    <!-- <script src="{% static 'js/slick.js' %}"></script> -->
     <script src="{% static 'js/isotope.js' %}"></script>
-    <script src="{% static 'js/slider.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
 
     <script>
-        // const client = algoliasearch('K7LWE7RYA4', 'dd84d643cb097b484b87bf0a2c35d742')
-        // const products = client.initIndex('MassageChair')
-        // const searchQuery = '*';
-        // const filters = 'price > 15000 OR rating > 4.5';
-        // products.search(searchQuery, {filters: filters}).then(({ hits }) => {
-        //     console.log(hits)
-        //     if (hits.length)
-        //         hits.forEach(Each=>{
-        //             const container = document.getElementById('ProductContainer');
-        //             const product = extractProductData(Each);
-        //             container.innerHTML += product;
-        //         }
-        //     )
-        // });
+        const client = algoliasearch('K7LWE7RYA4', 'dd84d643cb097b484b87bf0a2c35d742')
+        const products = client.initIndex('MassageChair')
+        const searchQuery = '*';
+        const filters = 'price > 15000 OR rating > 4.5';
+        products.search(searchQuery, {filters: filters}).then((WholeResult) => {
+            const hits = WholeResult.hits;
+            const maxPages = WholeResult.nbPages;
+            const currentPage = WholeResult.page;
+            SetPagination(currentPage);
+            addLatestProductParameter();
+            setTimeout(() => {
+                addPriceFilters(3200);
+            }, 999);
+            setTimeout(() => {
+                removeLatestProductParameter();
+            }, 999);
+            if (hits.length)
+                hits.forEach(Each=>{
+                    const container = document.getElementById('ProductContainer');
+                    const product = extractProductData(Each);
+                    container.innerHTML += product;
+                }
+            )
+        });
         function extractProductData(algoliaData) {
             const title = algoliaData.title;
             const price = algoliaData.price;
@@ -419,30 +226,78 @@
             const Cart = JSON.parse(localStorage.getItem('MassageCart')) || [];
             const style = Cart.some(item => item.product_id === 2) ? "color: rgb(127,255,212);" : null;
             const blackColor_Url = availableColors[0][2];
-            const Products = `
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="../Buy/${product_id}/"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a><i style="${style}" data-id="${product_id}" onclick="AddToCard(event)" class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
+            if (blackColor_Url){
+                const Products = `
+                    <div class="col-lg-4">
+                        <div class="item">
+                            <div class="thumb">
+                                <div class="hover-content">
+                                    <ul>
+                                        <li><a href="../Buy/${product_id}/"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                        <li><a><i style="${style}" data-id="${product_id}" onclick="AddToCard(event)" class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <img src="${blackColor_Url}" alt="">
                             </div>
-                            <img src="${blackColor_Url}" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>${title}</h4>
-                            <span>$${Number(price).toFixed(2)}</span>
-                            ${rating_stars.outerHTML}
+                            <div class="down-content">
+                                <h4>${title}</h4>
+                                <span>$${Number(price).toFixed(2)}</span>
+                                ${rating_stars.outerHTML}
+                            </div>
                         </div>
                     </div>
-                </div>
-            `;
+                `;
 
-            return Products;
+                return Products;
+            }
         }
+
+        const SetPagination = (page)=>{
+            const frame = document.getElementById('PaginationSection');
+            const DesignatedButtons = `
+                <div class="pagination">
+                    <ul>
+                        <li class="active">
+                            <a href="#">1</a>
+                        </li>
+                        <li >
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li>
+                            <a href="#">></a>
+                        </li>
+                    </ul>
+                </div>`
+            ;
+            frame.innerHTML = DesignatedButtons;
+        };
+
+        function addPriceFilters(maxPrice, minPrice = 0) {
+            var url = new URL(window.location.href);
+            url.searchParams.set('min_price', minPrice);
+            url.searchParams.set('max_price', maxPrice);
+            window.history.pushState({ path: url.href }, '', url.href);
+        }
+
+        function addLatestProductParameter() {
+            var url = new URL(window.location.href);
+            url.searchParams.set('latest_product', 'true');
+            window.history.pushState({ path: url.href }, '', url.href);
+        }
+
+        function removeLatestProductParameter() {
+            var url = new URL(window.location.href);
+            url.searchParams.delete('latest_product');
+            window.history.pushState({ path: url.href }, '', url.href);
+        }
+
 
         $(function() {
             var selectedClass = "";
@@ -691,6 +546,7 @@
                     });
                 }
             }
+
 
         HandleSearchBarState();
         SetProductCard();

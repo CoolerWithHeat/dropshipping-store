@@ -54,7 +54,7 @@ class CheckCart(APIView):
                 product_object = {}
                 if desired_product:
                     product_object['id'] = each.id
-                    product_object['title'] = each.title
+                    product_object['title'] = each.title    
                     product_object['quantity'] = desired_product['quantity']
                     product_object['price'] = each.price
                     total_price += (each.price * desired_product['quantity'])
